@@ -1,3 +1,28 @@
-body{
-    font-family:'Times New Roman', Times, serif
+*{
+    padding: 0;
+    margin: 0;
+}
+.header {
+    height: 100%;
+    background-image:"https://unsplash.com/photos/MGKGuMP9nLY"
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+}
+//for logo
+/* .header img{
+    width:
+    float:
+} */
+.login-btn {
+    width: 100px;
+    padding: 8px 0;
+    outline: none;
+    border-radius: 50px;
+    background: transparent;
+    color: white;
+    float: right;
+    padding-top: 20px;
+
 }
