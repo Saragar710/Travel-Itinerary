@@ -1,5 +1,5 @@
 * {
-  font-family: "Nunito", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 body {
 background-image: url(../images/beautiful-tropical-beach-sea.jpg);
@@ -27,7 +27,7 @@ font-size: 60px;
 }
 #floatingInput::placeholder{
   color: gray;
-  padding-left: 90px;
+  padding-left: 100px;
 }
 
 #floatingInputGrid {
@@ -39,7 +39,7 @@ font-size: 60px;
   margin-left: 10px;
 }
 .form-floating{
-   color: rgb(255, 106, 0);  
+   color:#0080C9;
 }
  .form-control:focus {
 border-color: #E8A31E;
@@ -55,7 +55,7 @@ button {
   font-weight: 800;
 }
 button:hover{
-background-color:#E8A31E;
+background-color:#C69419;
 }
 #warning{
 color: yellow;
