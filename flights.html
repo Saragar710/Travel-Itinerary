@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Popup Example</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+
+<button id="openPopup">Open Popup</button>
+<div id="popupContainer" class="popup">
+    <div class="popupContent">
+        <h2>Add your flight information</h2>
+        <p>When you add your information it will be added to your travel itinerary so that you can have all your information in the same place.</p>
+        <form id="flightInfoForm">
+            <label for="flightNumberInput">Flight Number:</label>
+            <input type="text" id="flightNumberInput" required>
+            <button type="button" id="submitFlightInfo">Get Info</button>
+        </form>
+        <pre id="flightInfo"></pre>
+        <button id="closePopup">Close</button>
+    </div>
+</div>
+<script src="./script.js"></script>
+</body>
+</html>

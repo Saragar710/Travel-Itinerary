@@ -1,0 +1,25 @@
+/* styles.css */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popupContent {
+    background-color: rgb(212, 121, 121);
+    padding: 20px;
+    border-radius: 10px; /* Adjust the radius as needed */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 80%; /* Set maximum width of the popup */
+}
+
+#openPopup {
+    margin-top: 20px;
+}
