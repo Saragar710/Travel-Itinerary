@@ -1,0 +1,16 @@
+body{
+    background-color: rgb(237, 225, 249);
+}
+
+header {
+    background-color: black;
+    padding: 20px;
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.h1 {
+    color: hotpink;
+}
+
