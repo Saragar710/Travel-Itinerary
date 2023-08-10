@@ -5,17 +5,13 @@
 }
 
 body{
-    font-family:'Times New Roman', Times, serif
-}
-
+    font-family:'Times New Roman', Times, serif;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body{ 
 
-}
 .bg{
     background-image: url("/images/GoodVibes (1).jpg");
     height: 500px;
