@@ -1,3 +1,84 @@
-body{
-    font-family:'Times New Roman', Times, serif
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
+
+body{ 
+
+}
+.bg{
+    background-image: url("/images/GoodVibes (1).jpg");
+    height: 500px;
+    position: realtive;
+    background-position: center;
+    background-size: cover;
+}
+.container { 
+    padding-top: 200px;
+    padding-bottom: 0;
+    font-size: 55px;
+    text-align: center;
+
+    /* text-align: center;
+    padding:30;
+    margin-top:25%;
+    margin-left: 50%;
+    width: 650px;
+    color:#111;
+    background: transparent;
+    background-color: blue; */
+
+}
+#btn{
+    width: 100px;
+    padding: 8px 0;
+    outline: none;
+    border: 2px solid white;
+    border-radius: 50px;
+    background: transparent;
+    color: white;
+    float: right;
+    padding-top: 20px;
+
+}
+/* body {
+    height: 100%;
+    background-image:url("Travel-Itinerary/images/GoodVibes (1).jpg");
+    background-size: cover; */
+    /* background-size: cover; */
+    /* background-position: center;
+    background-attachment: fixed;
+    text-align: center
+    padding-top: 20px; */
+/* } */
+
+/* for logo */
+/* .header img{
+    width:
+    float:
+} */
+/* .login-btn {
+    width: 100px;
+    padding: 8px 0;
+    outline: none;
+    border: 2px solid white;
+    border-radius: 50px;
+    background: transparent;
+    color: white;
+    float: right;
+    padding-top: 20px;
+
+}
+.header h1 {
+    padding-top: 200px;
+    padding-bottom: 0;
+    font-size: 55px;
+    text-align: center;
+}
+.header p {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 45px;
+    text-align: center;
+} */
