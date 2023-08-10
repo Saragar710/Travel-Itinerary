@@ -70,7 +70,7 @@ Whether a user is logged in or not is saved to local storage. -->
             <h1>Log in to RoamRadar</h1>
             <p>In order to begin your journey and access personalized trip information, please log in!</p>
             <!-- this div appears once someone gets the combination wrong. -->
-            <div class="loginErrorMessage" id="loginErrorMessage">Incorrect username/password combination.</div>
+            <div class="loginErrorMessage" id="loginErrorMessage"></div>
             <div class = input-group>
                 <!-- <label for="username" class="label">Username</label> -->
                 <input class = form-control type = "text" id="username" autofocus placeholder = "Username">
@@ -104,7 +104,7 @@ Whether a user is logged in or not is saved to local storage. -->
             <h1>Create an account</h1>
             <p>In order to begin your journey and access personalized trip information, please log in!</p>
             <!-- this div appears once someone gets the combination wrong. -->
-            <div class="loginErrorMessage" id="loginErrorMessage">Incorrect username/password combination.</div>
+            <div class="loginErrorMessage" id="loginErrorMessage"></div>
             <div>
                 <input class = form-control type = "text" autofocus placeholder = "Username">
             </div>
@@ -131,14 +131,13 @@ Whether a user is logged in or not is saved to local storage. -->
             
 
             <div class="container d-flex align-items-center justify-content-center">
-                <button type="button" class="button btn btn-success">Create Account</button>
+                <button type="button" class="button btn btn-success" id = "createAccountButton">Create Account</button>
             </div>
 
             <div class="questions">
                 <p>
                     
                     <a class=link  id="linkLogin">Already have an account? Sign in</a>
-                    <a id="linkCreateAccount">Already have an account? Sign in</a>
                 </p>
             </div>
             

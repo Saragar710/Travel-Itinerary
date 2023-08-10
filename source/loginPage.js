@@ -15,5 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
         loginForm.classList.remove("hidden");
         createAccountForm.classList.add("hidden");
     })
+
+// for now, clicking create account just redirects back to main page
+    document.getElementById("createAccountButton").addEventListener("click", function() {
+        loginForm.classList.remove("hidden");
+        createAccountForm.classList.add("hidden");
+    } )
+
 })
 

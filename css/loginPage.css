@@ -38,6 +38,8 @@ body{
 .loginErrorMessage {
     text-align: center;
     color: red;
+    font-size: medium;
+    
 }
 
 .login h1 {
