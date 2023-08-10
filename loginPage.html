@@ -61,24 +61,27 @@
     </div> -->
 
     <div class="loginSection"> 
-        <form class ="form login" id="login">
-            <h1>Welcome to RoamRadar</h1>
+
+
+        <form action= "index.html" class= "form login" id="login">
+            <h1>Log in to RoamRadar</h1>
             <p>In order to begin your journey and access personalized trip information, please log in!</p>
             <!-- this div appears once someone gets the combination wrong. -->
             <div class="loginErrorMessage" id="loginErrorMessage">Incorrect username/password combination.</div>
-            <div>
-                <input class = form-control type = "text" autofocus placeholder = "Username or email">
-                
+            <div class = input-group>
+                <!-- <label for="username" class="label">Username</label> -->
+                <input class = form-control type = "text" id="username" autofocus placeholder = "Username">
             </div>
+
             <br>
-            <div>
-                <input class = form-control type = "password" autofocus placeholder = "Password">
+            <div class = input-group>
+                <input class = form-control type = "password" id= "pass" autofocus placeholder = "Password">
                 
             </div>
             
 
             <div class="container d-flex align-items-center justify-content-center">
-                <button type="button" class="button btn btn-success">Log in</button>
+                <button type="submit" class="button btn btn-success">Log in</button>
             </div>
 
             <div class="questions">
@@ -93,7 +96,7 @@
 
         </form>
 
-        <form class ="form login" id="createAccount">
+        <form class ="form login hidden" id="createAccount">
             <h1>Create an account</h1>
             <p>In order to begin your journey and access personalized trip information, please log in!</p>
             <!-- this div appears once someone gets the combination wrong. -->
@@ -173,6 +176,7 @@
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 
 <script src="./source/loginPage.js"></script>
+<script src = "./source/login.js"></script>
 
 </body>
 </html>

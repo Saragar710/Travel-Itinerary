@@ -14,3 +14,4 @@ document.addEventListener("DOMContentLoaded", () => {
         createAccountForm.classList.add("hidden");
     })
 })
+
