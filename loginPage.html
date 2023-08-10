@@ -75,15 +75,63 @@
                 <input class = form-control type = "password" autofocus placeholder = "Password">
                 
             </div>
-            <br>
-            <button type="button" class="btn btn-success">Log in</button>
+            
+
+            <div class="container d-flex align-items-center justify-content-center">
+                <button type="button" class="button btn btn-success">Log in</button>
+            </div>
 
             <div class="questions">
                 <p>
                     <a href = "#">Forgot password?</a>
                 </p>
                 <p>
-                    <a id="linkCreateAccount">Don't have an account? Create an account</a>
+                    <a class=link href="./" id="linkCreateAccount">Don't have an account? Create an account</a>
+                </p>
+            </div>
+            
+
+        </form>
+
+        <form class ="form login" id="createAccount">
+            <h1>Create an account</h1>
+            <p>In order to begin your journey and access personalized trip information, please log in!</p>
+            <!-- this div appears once someone gets the combination wrong. -->
+            <div class="loginErrorMessage" id="loginErrorMessage">Incorrect username/password combination.</div>
+            <div>
+                <input class = form-control type = "text" autofocus placeholder = "Username">
+            </div>
+
+            <div>
+                <input class = form-control type = "text" autofocus placeholder = "Name">
+                
+            </div>
+
+            <div>
+                <input class = form-control type = "text" autofocus placeholder = "Email address">
+            </div>
+
+            <br>
+
+            <div>
+                <input class = form-control type = "password" autofocus placeholder = "Password">
+            </div>
+
+            <div>
+                <input class = form-control type = "password" autofocus placeholder = "Confirm password">
+            </div>
+            
+            
+
+            <div class="container d-flex align-items-center justify-content-center">
+                <button type="button" class="button btn btn-success">Create Account</button>
+            </div>
+
+            <div class="questions">
+                <p>
+                    
+                    <a class=link  id="linkLogin">Already have an account? Sign in</a>
+                    <a id="linkCreateAccount">Already have an account? Sign in</a>
                 </p>
             </div>
             
