@@ -8,7 +8,7 @@ body{
 
 }
 .bg{
-    background-image: url("Travel-Itinerary/images/GoodVibes (1).jpg");
+    background-image: url("/images/GoodVibes (1).jpg");
     height: 500px;
     position: realtive;
     background-position: center;
