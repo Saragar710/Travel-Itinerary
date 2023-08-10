@@ -1,3 +1,6 @@
+//this file submits the form if there is no error. It does not submit the form if there is no error.
+//Error is also shown on HTML.
+
 class login {
     constructor(form, fields) {
         this.form = form;
@@ -6,20 +9,12 @@ class login {
     }
 
     validateOnSubmit() {
-        var self = this;
 
         this.form.addEventListener ("submit", (e) => {
             e.preventDefault();
             const username = document.getElementById("username").value;
             const password = document.getElementById ("pass").value;
             console.log ("Username: " + username + " Password: " + password);
-
-
-            // self.fields.forEach((field) => {
-            //     const input = document.querySelector("#${field}");
-            //     console.log(fields);
-
-            // })
 
             var error = 0;
 
@@ -41,7 +36,8 @@ class login {
                 this.setStatus(password, "Password cannot be blank. Please try again.", "error");
                 console.log ("An error has been recorded on password");
             }
-
+            
+            //submits form if there is no error
             if (error == 0) {
                 console.log ("The form would be submitted in this case");
                 this.form.submit();
@@ -57,8 +53,6 @@ class login {
         }
     }
 }
-
-
 
 const form = document.querySelector (".login");
 //if the form is set, we want to pass the fields.

@@ -1,3 +1,5 @@
+//this file switches the login and create account forms onscreen when user presses the links.
+
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.querySelector("#login");
     const createAccountForm = document.querySelector("#createAccount");
