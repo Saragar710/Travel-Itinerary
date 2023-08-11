@@ -9,3 +9,4 @@ a personalized budget for their trip as well as locate activities and dining in 
 ## Usage
 
 ## Credits
+<a href="https://www.freepik.com/free-photo/beautiful-tropical-beach-sea_4123353.htm#query=landscape%20vacation&position=1&from_view=search&track=ais">Image by lifeforstock</a> on Freepik
