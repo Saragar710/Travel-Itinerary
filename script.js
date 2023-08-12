@@ -1,27 +1,46 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const apiKey = '2c9b45b403mshb258d51c24eddd7p191cfdjsn5579d0707170';
 
-// script.js
-const apiKey = '445d492f9e332dd6f33e1de4ce363ec6'; 
+    const url = 'https://flight-radar1.p.rapidapi.com/aircrafts/list';
+    const options = {
+        method: 'GET',
+        url: 'https://flight-radar1.p.rapidapi.com/aircrafts/list',
+        headers: {
+            'X-RapidAPI-Key': apiKey,
+            'X-RapidAPI-Host': 'flight-radar1.p.rapidapi.com'
+        }
+    };
 
-async function getFlightInformation(flightNumber) {
-    const apiUrl = `https://api.aviationstack.com/v1/flights/${flightNumber}?access_key=${apiKey}`;
+    const getFlightStatusButton = document.getElementById('getFlightStatus'); 
+    const saveFlightInfoButton = document.getElementById('saveFlightInfo'); // New button
+    const flightInfoElement = document.getElementById('flightInfo');
 
-    try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
+    getFlightStatusButton.addEventListener('click', () => {
+        fetchFlightStatus(); 
+    });
 
-        const flightInfoElement = document.getElementById('flightInfo');
-        flightInfoElement.textContent = JSON.stringify(data, null, 2);
-    } catch (error) {
-        console.error('Error fetching flight information:', error);
+    saveFlightInfoButton.addEventListener('click', () => {
+        saveFlightInfo(); // Call the new function when the "Save" button is clicked
+    });
+
+    async function fetchFlightStatus() {
+        // ... (existing fetchFlightStatus code)
     }
-}
 
-// Call this function when a form is submitted or a button is clicked
-function handleFlightInfoSubmission() {
-    const flightNumber = document.getElementById('flightNumberInput').value;
-    getFlightInformation(flightNumber);
-}
+    function saveFlightInfo() {
+        const airline = document.getElementById('airlineInput').value;
+        const flightNumber = document.getElementById('flightNumberInput').value;
+        const date = document.getElementById('dateInput').value;
 
-// Event listener for form submission or button click
-const submitButton = document.getElementById('submitFlightInfo');
-submitButton.addEventListener('click', handleFlightInfoSubmission);
+        const flightInfo = {
+            airline,
+            flightNumber,
+            date
+        };
+
+        // Store the flightInfo object in localStorage
+        localStorage.setItem('flightInfo', JSON.stringify(flightInfo));
+
+        alert('Flight information saved!');
+    }
+});
