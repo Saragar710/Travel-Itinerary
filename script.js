@@ -11,36 +11,62 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    const openPopupButton = document.getElementById('openPopup');
+    const closePopupButton = document.getElementById('closePopup');
     const getFlightStatusButton = document.getElementById('getFlightStatus'); 
-    const saveFlightInfoButton = document.getElementById('saveFlightInfo'); // New button
-    const flightInfoElement = document.getElementById('flightInfo');
+    const popupContainer = document.getElementById('popupContainer');
+
+    openPopupButton.addEventListener('click', () => {
+        popupContainer.style.display = 'block';
+        popupContainer.style.left = '50%';
+        popupContainer.style.top = '50%';
+        popupContainer.style.transform = 'translate(-50%, -50%)';
+    });
+
+    closePopupButton.addEventListener('click', () => {
+        popupContainer.style.display = 'none';
+    });
+
 
     getFlightStatusButton.addEventListener('click', () => {
         fetchFlightStatus(); 
     });
 
-    saveFlightInfoButton.addEventListener('click', () => {
-        saveFlightInfo(); // Call the new function when the "Save" button is clicked
-    });
+    async function fetchFlightData() {
+        try {
+            const response = await axios.request(options);
+            const data = response.data;
+            const models = data.rows[0].models;
+            const flightInfoElement = document.getElementById('flightInfo');
 
-    async function fetchFlightStatus() {
-        // ... (existing fetchFlightStatus code)
+            let modelsList = '';
+            models.forEach(model => {
+                modelsList += `Name: ${model.Name}\n`;
+            });
+
+            flightInfoElement.textContent = modelsList;
+        } catch (error) {
+            console.error(error);
+        }
     }
 
-    function saveFlightInfo() {
-        const airline = document.getElementById('airlineInput').value;
-        const flightNumber = document.getElementById('flightNumberInput').value;
-        const date = document.getElementById('dateInput').value;
-
-        const flightInfo = {
-            airline,
-            flightNumber,
-            date
+    async function fetchFlightStatus() {
+        const statusUrl = 'https://flight-info-api.p.rapidapi.com/status?version=v2';
+        const statusOptions = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '2c9b45b403mshb258d51c24eddd7p191cfdjsn5579d0707170',
+                'X-RapidAPI-Host': 'flight-info-api.p.rapidapi.com'
+            }
         };
 
-        // Store the flightInfo object in localStorage
-        localStorage.setItem('flightInfo', JSON.stringify(flightInfo));
-
-        alert('Flight information saved!');
+        try {
+            const response = await fetch(statusUrl, statusOptions);
+            const result = await response.text();
+            console.log(result);
+            document.getElementById('flightInfo').textContent = result;
+        } catch (error) {
+            console.error(error);
+        }
     }
 });
