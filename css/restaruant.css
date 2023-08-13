@@ -5,8 +5,8 @@
 }
 body{
    background-image:url("../images/vibrant-food.jpg");
-   height: 100%;
-   /* max-width: 100%; */
+   height: auto;
+   max-width: 100%;
    background-position: center;
    background-size: cover;
    /* border-image-repeat: no-repeat; */
