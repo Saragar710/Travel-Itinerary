@@ -3,23 +3,21 @@
   padding: 0;
   margin:0;
 }
-.bg{
+body{
    background-image:url("../images/vibrant-food.jpg");
    height: 100%;
-   max-width: 100%;
+   /* max-width: 100%; */
    background-position: center;
    background-size: cover;
-   border-image-repeat: no-repeat;
+   /* border-image-repeat: no-repeat; */
+   align-content: space-between;
 
 }
 .container{
-/* background-image:url("../images/Fine-dining-pic.jpg");("../images/food backround.jpg"); */
-/* background-image:url("../images/vibrant-food.jpg"); */
-/* height: 100%;
-max-width: 100%;
-background-position: center;
-background-size: cover;
-border-image-repeat: no-repeat; */
+padding-top: auto;
+padding: botton 20px;
+margin: 50px;
+align-content:space-around;
 
 font-family: futura-pt, sans-serif;
 font-style: normal;
@@ -27,5 +25,5 @@ font-weight: 300;
 color: #07458F;
 }
 h2 {
-    color: black;
+    color: white;
 }
