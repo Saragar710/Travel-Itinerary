@@ -20,11 +20,19 @@
         <div class="form-group">
             <label for="type">Select place type:</label>
             <select class="form-control" name="" id="type">
-                <option id="travelAgency">Travel Agencies</option>
-                <option id="restaurant">Restaurants</option>
-                <option id="bar">Bars</option>
+                <option id="travel_agency">travel_agency</option>
+                <option id="amusement_park">amusement_park</option>
+                <option id="aquarium">aquarium</option>
+                <option id="library">library</option>
+                <option id ="museum">museum</option>
+                <option id="movie_theater">movie_theater</option>
+                <option id="restaurant">restaurant</option>
+                <option id="night_club">night_club</option>
+                <option id="bar">bar</option>
             </select>
         </div>
+
+        <br><br>
 
         <table class="table table-bordered table-striped" id="places"></table>
 
@@ -39,7 +47,7 @@
   <script src="./source/thingsToDo.js"></script>
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0UUODTUY1AMUtNuS4fLtUajZFvBY6K-U&libraries=places&callback=initMap" async defer></script>
-  <script src="https://maps.googleapis.com/maps/api/place/autocomplete/output?parameters"></script>
+  <!-- <script src="https://maps.googleapis.com/maps/api/place/autocomplete/output?parameters"></script> -->
 
 </body>
 </html>
