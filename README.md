@@ -20,7 +20,7 @@ The user will be asked where they would like their visit to take place and from 
 ![Pick a location page ](/images/location-page.jpg)
 
 One the left you see a vertical navigation bar with diffrent topics that the user can view to help in their travel plans.
-![navbar with Itinerary](/Assets/images/Main-page-screenshot.jpg)
+![navbar with Itinerary](/images/)
 
 ## Credits
 
