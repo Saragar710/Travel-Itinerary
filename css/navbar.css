@@ -1,0 +1,30 @@
+li {
+  list-style: none;
+  font-weight: bolder;
+}
+#logo {
+  width: 110%;
+  margin-left: -25px;
+}
+.nav-link :active {
+  color: white;
+}
+.sidenav a:hover {
+  color: #aef8eb;
+  transform: scale(1, 1);
+}
+.sidenav a {
+  color: #08468f;
+}
+
+.sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  background-color: #0bb4f3;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+.Text {
+  margin-left: 200px;
+}
