@@ -11,3 +11,4 @@ startTripBtn.addEventListener("click", function () {
     location.href = "https://www.google.com/";
   }
 });
+
