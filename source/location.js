@@ -2,7 +2,7 @@ var startTripBtn = document.getElementById("startTripBtn");
 var whereToBox = document.getElementById("floatingInput");
 var startDate = document.getElementById("floatingInputGrid");
 var endDate = document.getElementById("floatingInputGrid2");
-// var apiKey = AIzaSyAq_GAwDEBNT9Rmyls_tvAY32toXVBf_6c;
+
 
 var hasWarning = false;
 var autocomplete;
