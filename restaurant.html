@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax"> -->
     <link rel="stylesheet" type="text/css" href="css/restaruant.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,11 +37,13 @@
             <option id="buffet">Buffet</option>
             <option id="family_style">Family_style</option>
             <option id="Bistro">Bistro</option>
+            <option id="pizza">Pizza</option>
+            <option id="bakery">Bakery</option>
 
         </select>
     </div>
     <br><br>
-    <table class="table table-bordered table-striped" id="restaruant"></table>
+    <table class="table table-bordered table-striped" id="places"></table>
 </div>
   <!-- <header class="p-5 mb-4 bg-light">
     <h1></h1> -->
@@ -68,133 +70,7 @@
   <!-- <script async src="https://cse.google.com/cse.js?cx=2465d521d1b044f97">
   </script>
   <div class="gcse-search"></div> -->
-  <main class="container">
-
-    <!-- const axios = require('axios');
-
-const options = {
-  method: 'GET',
-  url: 'https://restaurants-near-me-usa.p.rapidapi.com/restaurants/location/state/MI/city/West%20Bloomfield/0',
-  headers: {
-    'X-RapidAPI-Key': 'b6a9e3060amsha6d19ed1a224e1ep14dbb8jsn15df1069f330',
-    'X-RapidAPI-Host': 'restaurants-near-me-usa.p.rapidapi.com'
-  }
-};
-
-try {
-	const response = await axios.request(options);
-	console.log(response.data);
-} catch (error) {
-	console.error(error);
-} -->
-    <!-- <section class="row">
-      <div class="col-12 col-md-9">
-        <h2>Restaurants Near You</h2>
-
-        <section class="row justify-content-around">
-
-          <!-- <div class="col-12 col-sm-6 col-lg-4 mb-3"> -->
-            <!-- <div class="container-fluid">
-            <div class="card">
-              <h3 class="card-header">
-                Restaurant 1
-              </h3>
-              <div class="card-body">
-                <p class="card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo accusantium dolor at, blanditiis rem
-                  quisquam ipsam ipsum. Magnam ut quibusdam facilis consequatur veritatis, ullam molestiae, inventore
-                  neque,
-                  quas obcaecati laborum?
-                </p>
-                <button class="btn btn-block btn-info">Make a reservation.</button>
-              </div>
-            </div>
-          </div>
-        </section> -->
-<!-- 
-        <section class="row justify-content-around">
-          <div class="container-fluid">
-            <div class="card">
-              <h3 class="card-header">
-                Restaurant 2
-              </h3>
-              <div class="card-body">
-                <p class="card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo accusantium dolor at, blanditiis rem
-                  quisquam ipsam ipsum. Magnam ut quibusdam facilis consequatur veritatis, ullam molestiae, inventore
-                  neque,
-                  quas obcaecati laborum?
-                </p>
-                <button class="btn btn-block btn-info">Make a reservation.</button>
-              </div>
-            </div>
-          </div>
-        </section> -->
-<!--         
-        <section class="row justify-content-around">
-          <div class="container-fluid">
-            <div class="card">
-              <h3 class="card-header">
-                Restaurant 3
-              </h3>
-              <div class="card-body">
-                <p class="card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo accusantium dolor at, blanditiis rem
-                  quisquam ipsam ipsum. Magnam ut quibusdam facilis consequatur veritatis, ullam molestiae, inventore
-                  neque,
-                  quas obcaecati laborum?
-                </p>
-                <button class="btn btn-block btn-info">Make a reservation.</button>
-              </div>
-            </div>
-          </div>
-        </section> -->
-      <!-- </div> --> -->
-      <!-- <div class="col-12 col-md-3">
-        <h2>About Us</h2>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. A deleniti illo amet veniam. Enim dignissimos sint,
-          modi voluptate libero corporis ipsa consectetur commodi dolorum dolores vitae? Odit perspiciatis iure placeat.
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam, neque ab doloremque, harum corporis
-          voluptas explicabo amet culpa, odit autem totam itaque voluptatibus ipsa quos aperiam eius vel? Commodi,
-          nesciunt.
-        </p>
-      </div> -->
-    <!-- </section> -->
-
-    <hr />
-    <!-- justify-content-center changes the alignment of flex items to center axis -->
-    <section class="row justify-content-center">
-      <div class="col-12 col-sm-6 col-md-4">
-        <!-- <address>
-          <h2>Cool Company, Inc.</h2>
-
-          <h5>
-            Call us at <a href="tel:555.555.5555"></a>555.555.5555</a>
-          </h5>
-
-          <h5>
-            Email us at <a href="mailto:info@coolcompany.biz">info@coolcompany.biz</a>
-          </h5> -->
-
-        <!-- </address>
-      </div> -->
-      <!-- <div class="col-12 col-sm-6 col-md-4">
-        <h2>Leave a Comment</h2> -->
-        <!-- <form>
-          <div class="form-group p-2">
-            <label for="name-input">Your name:</label>
-            <input type="text" class="form-control" id="name-input" placeholder="Leave your name" />
-          </div>
-          <div class="form-group p-2">
-            <label for="comment-input">Your message:</label>
-            <textarea name="comment" id="comment-input" class="form-control"></textarea>
-          </div>
-          <button class="btn btn-success m-2">Submit Message</button>
-        </form> -->
-      <!-- </div> -->
-    </section>
-  </main>
+ 
 
  <script src="./source/restaurant.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDa-NcckTIrTU8Qhz437JcSJoK30OswcGg&libraries=places&callback=initMap"
@@ -205,29 +81,31 @@ try {
         {
             types:['geocode']
         })
-        autocomplete.addListener('reastaurant_changed', searchPlacesNearBy);
+        autocomplete.addListener('restaurant_changed', searchNearByRestaurants);
     }
-    // document.getElementById('type').onchange = searchReastaurantsNearMe
-    function searchPlacesNearBy(){
+    function searchNearByRestaurants(){
+         document.getElementById('type').onchange = searchNearByRestaurants
+    }
+    function searchNearByRestaurants(){
         document.getElementById('restaurant').innerHTML = ''
 
-        var restaurant = autocomplete.getRestaurant()
-        console.log(place)
+        var restaurant = autocomplete.getRestauratn()
+        console.log(restaurant)
 
         map = new google.maps.Map(document.getElementById('map'), {
-            center: restaurant.geometry.location,
+            center: place.geometry.location,
             zoom: 15
         });
 
-        service = new google.maps.restaurant.PlacesService(map);
+        service = new google.maps.places.PlacesService(map);
         service.nearbySearch({
-            location: restaurant.geometry.location,
+            location: place.geometry.location,
             radius: '500',
             type: [document.getElementById('type').value]
         }, callback)
     }
     function callback(results, status) {
-        if(status === google.maps.places.restaurantServiceStatus.OK){
+        if(status === google.maps.restaurant.RestaurantsServiceStatus.OK){
         console.log(results.length)
         for(var i = 0; i < results.lenght; i++) {
             createMarker(results[i]);
@@ -239,7 +117,7 @@ try {
         var row = table.insertRow();
         var cell1 = row.insertCell(0);
         cell1.innerHTML = restaurant.name;
-        if(restaurant.photos) {
+        if(place.photos) {
             let photoUrl = place.photo[0].getUrl();
             let cell2 = row.insertCell(1)
             cell2.innerHTML = `<img width="300" height="300" src="${photoUrl}"/>`
@@ -255,5 +133,6 @@ try {
 
 
 </script>
+
 </body>
 </html>

@@ -6,8 +6,8 @@
   font-family: 'Raleway', sans-serif;
   font-style: normal;
   font-weight: 300;
-  color: #07458F;
-
+  /* color: #07458F;#3CACAE */
+  color:white;
 
 
 }
@@ -27,11 +27,11 @@ padding: botton 20px;
 margin: 50px;
 align-content:space-around;
 
-font-family: futura-pt, sans-serif;
+/* font-family: futura-pt, sans-serif;
 font-style: normal;
 font-weight: 300;
-color: #07458F;
+color: #173252; */
 }
-h2 {
+h1 {
     color: white;
 }
