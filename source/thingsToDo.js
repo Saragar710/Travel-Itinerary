@@ -106,16 +106,26 @@ function createMarker(place) {
             place.opening_hours = "No opening hours available";
         }
 
-        if (!place.website) {
-            place.website = "No website address available";
-        }
+        // if (!place.website) {
+        //     place.website = "No website address available";
+        // }
 
         if (!place.formatted_phone_number) {
             place.formatted_phone_number = "No phone number available";
         }
 
         
-        cell1.innerHTML = (place.name + "<br><br> <b><u>Address:</u></b><br>" + place.formatted_address + "<br><br><b><u>Rating:<br></u></b>" + place.rating + "<br><br><b><u>Website address:<br></u></b>" + "<a href=\"" + place.website +"\">"+place.website+ "</a>" + "<br><br><b><u>Phone number:<br></u></b>" + place.formatted_phone_number);
+        cell1.innerHTML = ("<div class = tableItemName>"+ place.name + "</div>");
+        cell1.innerHTML += ("<br><br> <b><u>Address:</u></b><br>" + place.formatted_address + "<br><br><b><u>Rating:<br></u></b>" + place.rating);
+        
+        if (place.website){
+            cell1.innerHTML += ("<br><br><b><u>Website address:<br></u></b>" + "<a href=\"" + place.website +"\" target=\"_blank\">"+place.website+ "</a>");
+        } else {
+            place.website =  "No website address available";
+            cell1.innerHTML += ("<br><br><b><u>Website address:<br></u></b>" + place.website);
+        }
+
+        cell1.innerHTML += ("<br><br><b><u>Phone number:<br></u></b>" + place.formatted_phone_number);
         // ...
 
         if (place.opening_hours.weekday_text) {

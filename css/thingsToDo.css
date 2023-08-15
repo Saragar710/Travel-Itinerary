@@ -2,8 +2,8 @@
     box-sizing:border-box;
     padding: 0;
     margin: 0;
-    font-family: 'Inter', sans-serif;
-    font-family: 'Raleway', sans-serif;
+    /* font-family: 'Inter', sans-serif;
+    font-family: 'Raleway', sans-serif; */
 
 }
 
@@ -11,12 +11,12 @@ body {
     background-image: url("");
     background-size: contain;
 
-    background-color: rgba(237, 255, 38, 0.121);
+    background-color: white;
 }
 
 .header {
     background-color:black;
-    color: rgb(238, 248, 135);
+    color: #8cbdf9;
     font-weight: 700;
     
     padding: 20px;
@@ -27,5 +27,25 @@ body {
 
 }
 
-.title {
+.table {
+    background-color: #b2d2fa;
+}
+
+label {
+    font-weight: 700;
+}
+
+.thingsToDoContent {
+    padding: 2rem;
+}
+
+.tableItemName {
+    font-size: x-large;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    text-align: center;
+}
+
+td {
+    vertical-align: middle;
 }
