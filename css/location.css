@@ -62,7 +62,7 @@ button:hover {
 #warning {
   color: yellow;
   text-align: center;
-  /* margin-top: -215px; */
+  margin-top: -215px;
 }
 #logo {
   margin-left: 1100px;
