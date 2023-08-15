@@ -60,7 +60,16 @@ function createMarker(place) {
         image.height = 200;
         image.style.borderRadius = 50; 
         cell2.innerHTML = image.outerHTML;
-        cell2.innerHTML.style.borderRadius = 50;
+    }
+
+    else {
+        const image = document.createElement("img");
+        image.src = "./images/roam_radar_200x300.png";
+        let cell2 = row.insertCell(1);
+        image.width = 300;
+        image.height = 200;
+        image.style.borderRadius = 50; 
+        cell2.innerHTML = image.outerHTML;
     }
         
 }
