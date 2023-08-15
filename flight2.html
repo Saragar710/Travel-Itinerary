@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flight Information Webpage</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/flight.css">
+</head>
+<body>
+
+<button id="openPopup" class="btn btn-primary" data-toggle="modal" data-target="#flightInfoModal">Open Popup</button>
+
+<div class="modal fade" id="flightInfoModal" tabindex="-1" role="dialog" aria-labelledby="flightInfoModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="flightInfoModalLabel">Your Flight Information</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="flightInfoForm">
+                    <label for="airlineInput">Airline:</label>
+                    <input type="text" id="airlineInput" class="form-control" required>
+                    <label for="flightNumberInput">Flight Number:</label>
+                    <input type="text" id="flightNumberInput" class="form-control" required>
+                    <label for="dateInput">Date of Flights:</label>
+                    <input type="text" id="dateInput" class="form-control" required>
+                </form>
+                <pre id="flightInfo"></pre>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" id="saveFlightInfo" class="btn btn-success">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="./source/flight.js"></script>
+</body>
+</html>
