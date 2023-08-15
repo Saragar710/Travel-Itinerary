@@ -15,16 +15,7 @@ function initAutocomplete() {
   );
 }
 
-var preferredDestination= {
-  location: whereToBox.value,
-  startDate:startDate.value,
-  endDate:endDate.value
-}
-console.log(preferredDestination);
-// var userData = JSON.stringify(preferredDestination);
 var searchCity = JSON.parse(window.localStorage.getItem("searchCity")) || [];
-
-var hasWarning = false;
 
 startTripBtn.addEventListener("click", function () {
   if (whereToBox.value === "") {
@@ -48,7 +39,5 @@ startTripBtn.addEventListener("click", function () {
  
 });
 var storedData = JSON.parse(localStorage.getItem("Chosen Location")) || [];
-  searchCity.push(preferredDestination);
-  localStorage.setItem("searchCity", JSON.stringify(preferredDestination));
-});
+
 
