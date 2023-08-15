@@ -10,7 +10,7 @@ body{
    background-position: center;
    background-size: cover;
    /* border-image-repeat: no-repeat; */
-   align-content: space-between;
+   align-content: space-around;
 
 }
 .container{
