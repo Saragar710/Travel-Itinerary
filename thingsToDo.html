@@ -12,13 +12,46 @@
     
     <link  rel="stylesheet" type="text/css" href="./css/thingsToDo.css"/>
 
+    <link rel="stylesheet" href="css/navbar.css" />
+
 
     <title>RoamRadar: Things to Do</title>
 </head>
 <body>
-    <h1 class="header">Things to Do</h1>
-
-    <div class="thingsToDoContent">
+    
+    <nav class="sidenav">
+        <ul>
+          <li><img src="images/ROAMRADAR Logo.jpg" id="logo"/></li>
+          <li>
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Budget</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Hotels</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Flights</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Explore</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Resturants to Visit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Places to visit</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">Itinerary</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="thingsToDoContent Text">
+        <h1 class="header">Things to Do</h1>
+        
         <div id="map"></div>
         <div class="form-group">
             <label class=formPrompt for="location">Where are you off to?</label>

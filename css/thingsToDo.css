@@ -27,8 +27,29 @@ body {
 
 }
 
+table {
+    /* border-collapse:separate; */
+    /* border:solid black 1px; */
+    border-radius:15px;
+}
+
+td, th {
+    /* border-left:solid black 1px;
+    border-top:solid black 1px; */
+}
+
+th {
+    background-color: blue;
+    border-top: none;
+}
+
+td:first-child, th:first-child {
+     border-left: none;
+}
+
 .table {
-    background-color: #b2d2fa;
+    /* background-color: #b2d2fa; */
+    background-color: #0BB4F3;
 }
 
 label {
