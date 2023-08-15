@@ -16,7 +16,7 @@ function searchNearbyPlaces() {
     console.log("Entered SearchNearbyPlaces Function");
 
     //resets table in case user enters a different location
-    document.getElementById("places").innerHTML = "";
+    document.getElementById("places").innerHTML = "<tr><th>Location contact information</th><th>Open hours</th><th>Location Image</th></tr>";
 
     var place = autocomplete.getPlace();
     console.log(place);
@@ -76,9 +76,6 @@ function callbackDetails(results, status) {
 function createMarker(place) {
     //console.log(place);
     var id = place.place_id;
-
-    console.log ("the place's id is " + id);
-
     var table = document.getElementById("places");
     var row = table.insertRow();
     var cell1 = row.insertCell(0);
@@ -118,11 +115,21 @@ function createMarker(place) {
         }
 
         
-        cell1.innerHTML = (place.name + "<br><br> <b><u>Address:</u></b><br>" + place.formatted_address + "<br><br><b><u>Rating:<br></u></b>" + place.rating + "<br><br><b><u>Website address:<br></u></b>" + place.website + "<br><br><b><u>Phone number:<br></u></b>" + place.formatted_phone_number);
+        cell1.innerHTML = (place.name + "<br><br> <b><u>Address:</u></b><br>" + place.formatted_address + "<br><br><b><u>Rating:<br></u></b>" + place.rating + "<br><br><b><u>Website address:<br></u></b>" + "<a href=\"" + place.website +"\">"+place.website+ "</a>" + "<br><br><b><u>Phone number:<br></u></b>" + place.formatted_phone_number);
         // ...
 
-        if (place.opening_hours) {
-            cell2.innerHTML = place.opening_hours.weekday_text;
+        if (place.opening_hours.weekday_text) {
+            console.log (place.opening_hours.weekday_text);
+
+            cell2.innerHTML += (place.opening_hours.weekday_text[0]);
+            cell2.innerHTML += ("<br>" + place.opening_hours.weekday_text[1]);
+            cell2.innerHTML += ("<br>" + place.opening_hours.weekday_text[2]);
+            cell2.innerHTML += ("<br>" + place.opening_hours.weekday_text[3]);
+            cell2.innerHTML += ("<br>" + place.opening_hours.weekday_text[4]);
+            cell2.innerHTML += ("<br>" + place.opening_hours.weekday_text[5]);
+            cell2.innerHTML += ("<br>" + place.opening_hours.weekday_text[6]);
+
+
         } else {
             cell2.innerHTML = "No hours available";
         }
