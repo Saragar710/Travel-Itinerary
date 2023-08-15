@@ -9,11 +9,14 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Raleway:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/location.css" />
     <title>Plan Your Trip!</title>
   </head>
   <body> 
-    <img src="images/ROAMRADAR Logo.jpg" id="logo"/>
+    <img src="images/ROAMRADAR Logo (transparent background) (4).jpg" id="logo"/>
     <header>
       <h1>Plan Your Next Trip!</h1>
     </header>
@@ -25,8 +28,7 @@
           id="floatingInput"
           placeholder="e.g.Paris, Italy, Spain"
         />
-        <label for="floatingInput" id="floatingInput">Where to?</label>
-      </div>
+        <label for="floatingInput" id="floatingInput"><strong>Where to?</strong></label>
       <div class="row">
         <div class="col">
           <div class="form-floating">
@@ -37,7 +39,7 @@
               placeholder="date"
             />
             <label for="floatingInputGrid" id="floatingInputGrid"
-              >Start Date</label
+              ><strong>Start Date</strong> (Optional) </label
             >
           </div>
         </div>
@@ -50,13 +52,14 @@
               placeholder="date"
             />
             <label for="floatingInputGrid" id="floatingInputGrid2"
-              >End Date</label
+              ><strong>End Date</strong> (Optional)</label
             >
           </div>
         </div>
       </div>
       <button type="button" id="startTripBtn">
-        Start Planning
+      
+       Start Planning
       </button>
     </main>
   </body>
