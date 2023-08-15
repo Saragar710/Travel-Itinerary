@@ -1,7 +1,6 @@
 * {
-  font-family: futura-pt, sans-serif;
-  font-style: normal;
-  font-weight: 300;
+  font-family: "Inter", sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 body {
   background-image: url(../images/beautiful-tropical-beach-sea.jpg);
@@ -41,7 +40,8 @@ h1 {
   margin-left: 10px;
 }
 .form-floating {
-  color: #0080c9;
+  color: darkblue;
+  font: bolder;
 }
 .form-control:focus {
   border-color: #e8a31e;
@@ -62,9 +62,12 @@ button:hover {
 #warning {
   color: yellow;
   text-align: center;
-  margin-top: -215px;
+  /* margin-top: -215px; */
 }
 #logo {
   margin-left: 1100px;
   width: 14%;
+}
+a {
+  text-decoration: none;
 }
