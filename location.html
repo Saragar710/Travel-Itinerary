@@ -24,12 +24,12 @@
       <div class="form-floating">
         <input
           type="text"
-          class="form-control"
+          class="form-control autocomplete"
           id="floatingInput"
           placeholder="e.g.Paris, Italy, Spain"
         />
         <label for="floatingInput" id="floatingInput"><strong>Where to?</strong></label>
-      <div class="row">
+        <div class="row">
         <div class="col">
           <div class="form-floating">
             <input
@@ -58,10 +58,12 @@
         </div>
       </div>
       <button type="button" id="startTripBtn">
-       <!-- <a href="navbar.html">Start Planning</a>  -->
+      
        Start Planning
       </button>
     </main>
   </body>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAq_GAwDEBNT9Rmyls_tvAY32toXVBf_6c&libraries=places&callback=initAutocomplete" async defer>
+</script>
   <script src="source/location.js"></script>
 </html>
