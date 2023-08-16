@@ -11,16 +11,16 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
- 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Raleway:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/location.css" />
     <title>Plan Your Trip!</title>
   </head>
-  <body>
+  <body> 
+    <img src="images/ROAMRADAR Logo (transparent background) (4).jpg" id="logo"/>
     <header>
       <h1>Plan Your Next Trip!</h1>
     </header>
-    <main>
+    <main> 
       <div class="form-floating">
         <input
           type="text"
@@ -28,8 +28,7 @@
           id="floatingInput"
           placeholder="e.g.Paris, Italy, Spain"
         />
-        <label for="floatingInput" id="floatingInput">Where to?</label>
-      </div>
+        <label for="floatingInput" id="floatingInput"><strong>Where to?</strong></label>
       <div class="row">
         <div class="col">
           <div class="form-floating">
@@ -40,7 +39,7 @@
               placeholder="date"
             />
             <label for="floatingInputGrid" id="floatingInputGrid"
-              >Start Date</label
+              ><strong>Start Date</strong> (Optional) </label
             >
           </div>
         </div>
@@ -53,15 +52,16 @@
               placeholder="date"
             />
             <label for="floatingInputGrid" id="floatingInputGrid2"
-              >End Date</label
+              ><strong>End Date</strong> (Optional)</label
             >
           </div>
         </div>
       </div>
       <button type="button" id="startTripBtn">
-        Start Planning
+      
+       Start Planning
       </button>
     </main>
   </body>
-  <script src="script/main.js"></script>
+  <script src="source/location.js"></script>
 </html>
