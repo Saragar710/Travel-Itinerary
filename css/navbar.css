@@ -1,9 +1,9 @@
-
-*{
-font-family: 'Inter', sans-serif;
-font-family: 'Raleway', sans-serif;
+/* (START OF NICOLES PORTION) */
+* {
+  font-family: "Inter", sans-serif;
+  font-family: "Raleway", sans-serif;
 }
-  
+
 li {
   list-style: none;
   font-weight: bolder;
@@ -35,6 +35,29 @@ li {
   padding-top: 20px;
   border-radius: 5px;
 }
-.Text {
+#locationTitle {
+  text-align: center;
   margin-left: 200px;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
+#start {
+  margin-left: 260px;
+  text-align: center;
+}
+#end {
+  margin-left: 100px;
+}
+#outputStart,
+#outputEnd,
+#outputTitle {
+  color: #03beb2;
+  font-weight: bolder;
+}
+hr {
+  width: 70%;
+  margin-left: 270px;
+  line-height: 10px;
+}
+/* (END OF NICOLES PORTION) */
+/* If adding CSS to your portion of navbar please do not touch CSS that is above, it will mess up current look  */
