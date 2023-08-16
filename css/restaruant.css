@@ -1,8 +1,13 @@
 *{
   box-sizing: border-box;
   padding: 0;
-  margin:0;
-}
+  margin:0;font-family: futura-pt, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  color: #07458F;
+  }
+
+
 body{
    background-image:url("../images/vibrant-food.jpg");
    height: auto;
@@ -19,10 +24,6 @@ padding: botton 20px;
 margin: 50px;
 align-content:space-around;
 
-font-family: futura-pt, sans-serif;
-font-style: normal;
-font-weight: 300;
-color: #07458F;
 }
 h2 {
     color: white;
