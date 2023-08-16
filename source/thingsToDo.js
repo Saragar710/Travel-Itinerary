@@ -16,7 +16,7 @@ function searchNearbyPlaces() {
     console.log("Entered SearchNearbyPlaces Function");
 
     //resets table in case user enters a different location
-    document.getElementById("places").innerHTML = "<tr><th>Location contact information</th><th>Open hours</th><th>Location Image</th></tr>";
+    document.getElementById("places").innerHTML = "<tr><th>Add to Itinerary</th><th>Contact information</th><th>Open hours</th><th>Location Image</th></tr>";
 
     var place = autocomplete.getPlace();
     console.log(place);
@@ -78,10 +78,12 @@ function createMarker(place) {
     var id = place.place_id;
     var table = document.getElementById("places");
     var row = table.insertRow();
-    var cell1 = row.insertCell(0);
 
-    var cell2 = row.insertCell(1);
+    var cell0 = row.insertCell(0);
+    var cell1 = row.insertCell(1);
+    var cell2 = row.insertCell(2);
 
+    cell0.innerHTML = "<button type=button id=addItineraryButton class=\"btn-lg addItineraryButton btn btn-info\">Add to Itinerary</button>";
 
 
     getPlaceDetails(id)
@@ -106,10 +108,6 @@ function createMarker(place) {
             place.opening_hours = "No opening hours available";
         }
 
-        // if (!place.website) {
-        //     place.website = "No website address available";
-        // }
-
         if (!place.formatted_phone_number) {
             place.formatted_phone_number = "No phone number available";
         }
@@ -126,11 +124,11 @@ function createMarker(place) {
         }
 
         cell1.innerHTML += ("<br><br><b><u>Phone number:<br></u></b>" + place.formatted_phone_number);
-        // ...
+        
 
         if (place.opening_hours.weekday_text) {
             console.log (place.opening_hours.weekday_text);
-
+            cell2.classList.add("openHoursCell");
             cell2.innerHTML += (place.opening_hours.weekday_text[0]);
             cell2.innerHTML += ("<br>" + place.opening_hours.weekday_text[1]);
             cell2.innerHTML += ("<br>" + place.opening_hours.weekday_text[2]);
@@ -145,8 +143,6 @@ function createMarker(place) {
         }
 
 
-
-
       })
       .catch((error) => {
         // Handle the error if the API request fails
@@ -154,13 +150,10 @@ function createMarker(place) {
       });
 
 
-
-    
-
     if(place.photos) {
         const image = document.createElement("img");
         image.src = place.photos[0].getUrl();
-        let cell3 = row.insertCell(2);
+        let cell3 = row.insertCell(3);
         image.width = 300;
         image.height = 200;
         image.style.borderRadius = 50; 
@@ -170,13 +163,21 @@ function createMarker(place) {
     else {
         const image = document.createElement("img");
         image.src = "./images/roam_radar_200x300.png";
-        let cell3 = row.insertCell(2);
+        let cell3 = row.insertCell(3);
         image.width = 300;
         image.height = 200;
         image.style.borderRadius = 50; 
         cell3.innerHTML = image.outerHTML;
     }
+
         
 }
 
 document.getElementById("type").onchange = searchNearbyPlaces;
+
+
+function addButton () {
+    //adds button to html table under every item
+}
+
+
