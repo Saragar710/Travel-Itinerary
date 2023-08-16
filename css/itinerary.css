@@ -46,6 +46,31 @@
 
 }
 
+.link-box {
+
+}
+
+.invite-link-text {
+
+}
+
+.invite-text {
+
+}
+
+.copy-link {
+    background-color: #f75940;
+    border-color:#f75940;
+    border-radius: 20px;
+}
+
+
+.budgetSaveButton {
+    background-color: #f75940;
+    border-color:#f75940;
+    border-radius: 20px;
+}
+
 .side-bar-budget {
     display:flex;
     flex-direction: column;
