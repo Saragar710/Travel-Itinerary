@@ -3,10 +3,7 @@
     padding: 0;
     margin: 0;
     font-size: 25px;
-<<<<<<< HEAD
-    box-sizing: border-box;
-=======
->>>>>>> eb8bc6bf2ca2cc2de9c6c35bcf62a2ed8922ed5e
+    /* box-sizing: border-box; */
     font-size: 25px;
     text-align: center;
     font-family: 'Raleway', sans-sergit if;
@@ -30,7 +27,7 @@
 
 }
 
-@media screen and (max-width: 1280px){
+/* @media screen and (max-width: 1280px){
     body{
         background-color: lightblue;
     }
@@ -39,4 +36,4 @@
     body {
         background-color: honeydew
     }
-}
+} */
