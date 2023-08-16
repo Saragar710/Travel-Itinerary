@@ -42,6 +42,7 @@ class login {
                 console.log ("The form would be submitted in this case");
                 localStorage.setItem("auth",1);
                 this.form.submit();
+                // window.location.href= "location.html";
             }
         }) 
     }
@@ -62,3 +63,4 @@ if (form) {
     const fields = ["username", "password"];
     new login(form, fields);
 }
+

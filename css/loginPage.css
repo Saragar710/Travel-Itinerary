@@ -84,3 +84,23 @@ header {
 .hidden {
     display: none;
 }
+
+.loginImage {
+    height: 200px;
+}
+
+.loginHeader {
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+.radar {
+    color: #0D6FE5;
+}
+
+.roam {
+    color: #03C1AF;
+}
