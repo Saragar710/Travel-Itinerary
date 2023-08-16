@@ -16,7 +16,7 @@ li {
   margin-bottom: 5px;
 }
 .nav-link :active {
-  color: white;
+  color: rgb(26, 241, 198);
 }
 .sidenav a:hover {
   color: white;
