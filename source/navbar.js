@@ -5,12 +5,32 @@ var outputEnd = document.getElementById("outputEnd");
 
 function displayTitle() {
   outputTitle.innerHTML = chosenLocation.location;
-  outputStart.innerHTML = chosenLocation.startDate;
-  outputEnd.innerHTML = chosenLocation.endDate;
 }
 var chosenLocation = JSON.parse(localStorage.getItem("chosen Location"));
 
 displayTitle();
+
+var date = new Date(chosenLocation.endDate);
+var adjustedDate = new Date(
+  date.getTime() + date.getTimezoneOffset() * 60 * 1000
+);
+var formattedEndDate = adjustedDate.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+outputEnd.innerHTML = formattedEndDate;
+
+var date = new Date(chosenLocation.startDate);
+var adjustedDate = new Date(
+  date.getTime() + date.getTimezoneOffset() * 60 * 1000
+);
+var formattedStartDate = adjustedDate.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+outputStart.innerHTML = formattedStartDate;
 // (END OF NICOLES PORTION)
 
 /* If adding JS to your portion of navbar page please do not touch CSS that is above, it will mess up 
