@@ -34,6 +34,8 @@ li {
   overflow-x: hidden;
   padding-top: 20px;
   border-radius: 5px;
+  z-index: 1;
+  top: 0;
 }
 #locationTitle {
   text-align: center;
@@ -61,4 +63,3 @@ hr {
 }
 /* (END OF NICOLES PORTION) */
 /* If adding CSS to your portion of navbar please do not touch CSS that is above, it will mess up current look  */
-
