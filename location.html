@@ -16,7 +16,7 @@
     <title>Plan Your Trip!</title>
   </head>
   <body> 
-    <img src="images/ROAMRADAR Logo (transparent background) (4).jpg" id="logo"/>
+    <img src="images/ROAMRADAR Logo PNG.png" id="logo"/>
     <header>
       <h1>Plan Your Next Trip!</h1>
     </header>
@@ -24,12 +24,12 @@
       <div class="form-floating">
         <input
           type="text"
-          class="form-control"
+          class="form-control autocomplete"
           id="floatingInput"
           placeholder="e.g.Paris, Italy, Spain"
         />
         <label for="floatingInput" id="floatingInput"><strong>Where to?</strong></label>
-      <div class="row">
+        <div class="row">
         <div class="col">
           <div class="form-floating">
             <input
@@ -63,5 +63,7 @@
       </button>
     </main>
   </body>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAq_GAwDEBNT9Rmyls_tvAY32toXVBf_6c&libraries=places&callback=initAutocomplete" async defer>
+</script>
   <script src="source/location.js"></script>
 </html>

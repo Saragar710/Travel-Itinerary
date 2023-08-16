@@ -1,0 +1,61 @@
+*{
+    font-family: 'Inter', sans-serif; 
+    font-style: normal;
+    font-weight: 400;
+}
+body {
+    background-image: url(https://hotel-webdesign.com/wp-content/uploads/2022/04/2goxkj594nm-1536x1024.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: max-content;
+    overflow-x: auto;
+    background-position: 100% -40px;
+}
+
+.container {
+    margin-top: 300px;
+    margin-left: 50px;
+    padding: 20px;
+    text-align: center;
+    position: relative;  
+    z-index: 1;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: rgba(255, 254, 254, 0.25); 
+    color: rgb(15, 15, 15); 
+    padding: 120px;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    border-radius: 60px;
+}
+
+.container h1 {
+    font-size: 40px;
+    margin-bottom: 0px;
+}
+
+.btn-book-now {
+    margin-top: 20px;
+}
+
+
+.form-group {
+    padding-top: 0px;
+    padding: 20px;
+    font-size: 30px;
+}
+
+.form-control.mr-2 {
+    width: 175px;
+    height: 25px;
+    background-color: rgba(255, 254, 254, 0.45); 
+}
+
+.btn-search{
+    background-color: rgba(77, 183, 253, 0.45); 
+}

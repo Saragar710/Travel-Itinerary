@@ -3,16 +3,19 @@ var whereToBox = document.getElementById("floatingInput");
 var startDate = document.getElementById("floatingInputGrid");
 var endDate = document.getElementById("floatingInputGrid2");
 
-var preferredDestination= {
-  location: whereToBox.value,
-  startDate:startDate.value,
-  endDate:endDate.value
-}
-console.log(preferredDestination);
-// var userData = JSON.stringify(preferredDestination);
-var searchCity = JSON.parse(window.localStorage.getItem("searchCity")) || [];
-
 var hasWarning = false;
+var autocomplete;
+
+function initAutocomplete() {
+  autocomplete = new google.maps.places.Autocomplete(
+    document.querySelector(".autocomplete"),
+    {
+      types: ["(cities)"],
+    }
+  );
+}
+
+var searchCity = JSON.parse(window.localStorage.getItem("searchCity")) || [];
 
 startTripBtn.addEventListener("click", function () {
   if (whereToBox.value === "") {
@@ -26,7 +29,15 @@ startTripBtn.addEventListener("click", function () {
   } else {
     window.location.href = "navbar.html";
   }
-  // var city = whereToBox.value;
-  searchCity.push(preferredDestination);
-  localStorage.setItem("searchCity", JSON.stringify(preferredDestination));
+
+ var preferredDestination = {
+   location: whereToBox.value,
+   startDate: startDate.value,
+   endDate: endDate.value,
+ };
+  localStorage.setItem("chosen Location", JSON.stringify(preferredDestination));
+ 
 });
+var storedData = JSON.parse(localStorage.getItem("Chosen Location")) || [];
+
+
