@@ -22,14 +22,14 @@
                 
                 <div class="side-bar-budget button">
                     <button id="add-expense" class="add-expense button"> + Add Expense</button>
-                    <button class="add-friend button" id="add-friend">Add tripmate</button>
+                    <button class="add-friend button" id="add-friend" data-toggle="modal" data-target="#addTripmate">Add tripmate</button>
                 </div>
             </div>
         </div>
 
         <div class="trip-name">
             <h5>Trip name:</h5>
-            <input placeholder="Where are you going?">
+            <input id="user-place-input" name="place" type="text" placeholder="Where are you going?">
         </div> 
 
 
@@ -51,7 +51,41 @@
                         <button class="budget-notes button" id="budget-notes">Budget notes</button>
                     </div>
 
-                    
+
+  <!-- Modal add trip mate-->
+  <div class="modal fade" id="addTripmate" tabindex="-1" aria-labelledby="tripmateLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="tripmateLabel">Add Tripmate</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="link-box">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16">
+                <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/>
+                <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/>
+              </svg>
+              <span>https://github.com/Saragar710/Travel-Itinerary</span>
+              <button class="copy-link" id="copy-invite-link" onclick="copyText()">Copy link</button>
+          </div>
+          <div class="invite-link-text">
+            <div class="invite-text">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                  </svg>
+                  <span>Invite by email or user</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer"></div>
+        </div>
+    </div>
+  </div>
+
+                    <!--Add budget amount modal-->
                       
                       
                       <div class="modal fade" id="edit-budget-modal" tabindex="-1" aria-labelledby="editBudgetLabel" aria-hidden="true">
@@ -76,7 +110,7 @@
                             </div>
                             <div class="modal-footer">
                               
-                              <button type="button" class="btn btn-primary">Save changes</button>
+                              <button type="button" class="btn btn-primary budgetSaveButton">Save changes</button>
                             </div>
                           </div>
                         </div>
