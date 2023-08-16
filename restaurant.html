@@ -45,52 +45,37 @@
     <br><br>
     <table class="table table-bordered table-striped" id="places"></table>
 </div>
-  <!-- <header class="p-5 mb-4 bg-light">
-    <h1></h1> -->
-    <!-- <div class="container"> -->
-      <!-- Every grid layout we create starts with an HTML element receiving a class of row -->
-      <!-- align-items-end change the alignment of flex items to end -->
-      <!-- <div class="row align-items-end">
-        <div class="col-12 col-md-6"> -->
-          <!-- <img class='img-fluid' src="./../Images/02-placeholder.png" alt="video placeholder"> -->
-        <!-- </div> -->
-        <!-- Uses a combination of col-* values to make full-size on small devices and half-size on medium or larger devices -->
-        <!-- <div class="col-12 col-md-6">
-          <h1>Welcome to the app.</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, reprehenderit! Placeat quo
-            necessitatibus porro corporis quasi architecto sit aspernatur inventore, perspiciatis nulla hic soluta ipsum
-            ipsa sed iure dolorum! Tenetur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex voluptatem
-            dolorum earum esse recusandae facere aliquam. Excepturi facilis sint nesciunt ipsa, eveniet facere in quidem
-            voluptas exercitationem distinctio commodi laborum!</p>
-          <button class="btn btn-primary">Learn more.</button>
-        </div> -->
-      <!-- </div>
-    </div> -->
-  <!-- </header> -->
-  <!-- <script async src="https://cse.google.com/cse.js?cx=2465d521d1b044f97">
-  </script>
-  <div class="gcse-search"></div> -->
- 
+
 
  <script src="./source/restaurant.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDa-NcckTIrTU8Qhz437JcSJoK30OswcGg&libraries=places&callback=initMap"
         asyn defer></script>
 <script>
+    var map;
+
     function initMap() {
         autocomplete = new google.maps.places.Autocomplete((document.getElementById('autocomplete')),
         {
             types:['geocode']
         })
-        autocomplete.addListener('restaurant_changed', searchNearByRestaurants);
+        autocomplete.addListener('place_changed', searchNearByRestaurants);
+    
+        function initMap() {
+            var initialLocation = { lat:28.381234066504312, lan:-81.61096094887043};
+            map = new google.maps.Map(document.getElementById('map'),{
+                center: initialLocation,
+                zoom: 10
+            });
+        }
     }
+    // function searchNearByRestaurants(){
+    //      document.getElementById('type').onchange = searchNearByRestaurants
+    // }
     function searchNearByRestaurants(){
-         document.getElementById('type').onchange = searchNearByRestaurants
-    }
-    function searchNearByRestaurants(){
-        document.getElementById('restaurant').innerHTML = ''
+        document.getElementById('places').innerHTML = ''
 
-        var restaurant = autocomplete.getRestauratn()
-        console.log(restaurant)
+        var place = autocomplete.getPlace()
+        console.log(place)
 
         map = new google.maps.Map(document.getElementById('map'), {
             center: place.geometry.location,
@@ -101,36 +86,33 @@
         service.nearbySearch({
             location: place.geometry.location,
             radius: '500',
-            type: [document.getElementById('type').value]
+            type: [restauarant]
         }, callback)
     }
     function callback(results, status) {
-        if(status === google.maps.restaurant.RestaurantsServiceStatus.OK){
+        if(status === google.maps.places.PlacesServiceStatus.OK){
         console.log(results.length)
-        for(var i = 0; i < results.lenght; i++) {
+        for(var i = 0; i < results.length; i++) {
             createMarker(results[i]);
         }}
 
-    function createMarker(restaurant){
-        console.log(restaurant)
-        var table = document.getElementById("restaurants");
+    function createMarker(place){
+        console.log(place);
+        var table = document.getElementById("places");
         var row = table.insertRow();
-        var cell1 = row.insertCell(0);
-        cell1.innerHTML = restaurant.name;
+        var cell1 = row.insertCell(O);
+        cell1.innerHTML = place.name;
         if(place.photos) {
-            let photoUrl = place.photo[0].getUrl();
-            let cell2 = row.insertCell(1)
-            cell2.innerHTML = `<img width="300" height="300" src="${photoUrl}"/>`
+            let photoUrl = place.photos[O].getUrl();
+            let cell2 = row.insertCell(1);
+            cell2.innerHTML = `<img width="300" height="300" src="${photoUrl}"/>`;
         }else{ 
-                let photoUrl = "https://via.placeholder.com/150"
-                let cell2 = row.insertCell(1)
-                cell2.innerHTML = `<img width="300" height="300" src="${photoUrl}"/>`
+                let photoUrl = "https://via.placeholder.com/150";
+                let cell2 = row.insertCell(1);
+                cell2.innerHTML = `<img width="300" height="300" src="${photoUrl}"/>`;
             }
         }
     }
-    
-
-
 
 </script>
 
