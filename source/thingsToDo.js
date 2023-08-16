@@ -41,7 +41,7 @@ function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         console.log("There are this many results: " + results.length);
         for (var i = 0; i< results.length; i++) {
-            createMarker(results[i]);
+            createMarker(results[i],i);
         }
     }
 }
@@ -73,7 +73,7 @@ function callbackDetails(results, status) {
   }
 }
 
-function createMarker(place) {
+function createMarker(place, iteration) {
     //console.log(place);
     var id = place.place_id;
     var table = document.getElementById("places");
@@ -84,6 +84,8 @@ function createMarker(place) {
     var cell2 = row.insertCell(2);
 
     cell0.innerHTML = "<button type=button id=addItineraryButton class=\"btn-lg addItineraryButton btn btn-info\">Add to Itinerary</button>";
+    
+    row.classList.add(place.place_id);
 
 
     getPlaceDetails(id)
@@ -124,6 +126,8 @@ function createMarker(place) {
         }
 
         cell1.innerHTML += ("<br><br><b><u>Phone number:<br></u></b>" + place.formatted_phone_number);
+        
+        //saves location ID as the class of the item
         
 
         if (place.opening_hours.weekday_text) {
@@ -177,7 +181,66 @@ document.getElementById("type").onchange = searchNearbyPlaces;
 
 
 function addButton () {
-    //adds button to html table under every item
+   
+// Select all table rows
+const rows = document.querySelectorAll('table tr');
+
+// Add event listener to each row
+rows.forEach(row => {
+  row.addEventListener('click', saveRowToLocalStorage);
+});
+
+// Event listener function
+function saveRowToLocalStorage(event) {
+  // Get the row that was clicked
+  const row = event.currentTarget;
+
+  // Get the content of the row
+  const content = row.innerHTML;
+
+  // Generate a unique ID for the row
+  const rowId = generateUniqueId();
+
+  //save unique ID to key savedThingsToDo
+  
+
+  let isContentSaved = false;
+  for (let i = 0; i < localStorage.length; i++) {
+    const storedContent = localStorage.getItem(localStorage.key(i));
+    if (content === storedContent) {
+      isContentSaved = true;
+      break;
+    }
+  }
+
+  
+  if (!isContentSaved) {
+    // Save the row content to local storage with the unique ID
+    // localStorage.setItem(rowId, content);
+    localStorage.setItem(rowId, JSON.stringify(content));
+
+
+    // Add the key to the array of keys in local storage
+    const savedKeys = JSON.parse(localStorage.getItem('savedKeys')) || [];
+    savedKeys.push(rowId);
+    localStorage.setItem('savedKeys', JSON.stringify(savedKeys));
+
+
+    // Optional: Display a message that the row was saved
+    console.log("Row with ID" + rowId + "saved to local storage.");
+  } else {
+    // Optional: Display a message that the row was already saved
+    console.log("Row with ID" + rowId + "already exists in local storage.");
+  }
 }
 
+// Function to generate a unique ID for each row
+function generateUniqueId() {
+  return Math.random().toString(36).substr(2, 9);
+}
+}
+
+
+
+//temporary way for the buttons to add to local storage;
 
