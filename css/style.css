@@ -18,6 +18,7 @@
     position: fixed;
     background-position: center;
     background-size: cover;
+    max-width: fit-content;
 
 }
 .container { 
