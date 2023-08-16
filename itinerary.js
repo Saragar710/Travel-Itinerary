@@ -16,3 +16,11 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
+
+function copyText() {
+      
+  // Copy text into clipboard 
+  //copy invite link 
+  navigator.clipboard.writeText
+      ("https://github.com/Saragar710/Travel-Itinerary");
+}

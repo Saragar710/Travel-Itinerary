@@ -11,12 +11,12 @@ body {
     background-image: url("");
     background-size: contain;
 
-    background-color: white;
+    background-color: #d0fbf0;
 }
 
 .header {
-    background-color:black;
-    color: #87CEFA;
+    background-color: #87CEFA;
+    color: black;
     font-weight: 700;
     
     padding: 20px;
@@ -36,6 +36,11 @@ table {
 td, th {
     /* border-left:solid black 1px;
     border-top:solid black 1px; */
+    
+}
+
+.openHoursCell {
+    min-width: 250px;
 }
 
 th {
@@ -57,7 +62,7 @@ label {
 }
 
 .thingsToDoContent {
-    padding: 2rem;
+    padding-right: 2rem;
 }
 
 .tableItemName {
@@ -69,4 +74,19 @@ label {
 
 td {
     vertical-align: middle;
+}
+
+.thingsToDoContent {
+    margin-left: 200px;
+}
+
+.addItineraryButton {
+    margin: 0px;
+    
+}
+
+.buttonRow{
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
