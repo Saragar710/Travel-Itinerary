@@ -34,7 +34,7 @@ When the user opens the web application they are shown the main introduction pag
 ![Main intro/description page ](/images/intro-screenshot.jpg)
 
 Once redirected to the log in page the user will have the oppurtunity to create an account or re-login using their saved credentials.Once finished they will click on the log in button which will redirect them to the start of the site.
-![Log in page ](/images/)
+![Log in page ](/images/login-page.jpg)
 
 The user will be asked where they would like their visit to take place and from what dates.They are provided a Google powered drop down autocompletion menu to help them narrow their search. Once selected they can press the start planning button to be redirected once more to the itinerary where they will be able to begin officially planning their dream vaction to their liking.
 ![Pick a location page ](/images/location-page.jpg)
