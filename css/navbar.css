@@ -1,7 +1,6 @@
 /* (START OF NICOLES PORTION) */
 * {
   font-family: "Inter", sans-serif;
-  font-family: "Raleway", sans-serif;
 }
 
 li {
@@ -64,12 +63,10 @@ hr {
 /* (END OF NICOLES PORTION) */
 /* If adding CSS to your portion of navbar please do not touch CSS that is above, it will mess up current look  */
 
-
 /* Beginning of Alejandra's portion */
 
 .alejandraIntro {
   margin-left: 200px;
 }
-
 
 /* End of Alejandra's Portion */
