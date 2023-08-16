@@ -15,3 +15,13 @@ displayTitle();
 
 /* If adding JS to your portion of navbar page please do not touch CSS that is above, it will mess up 
 current look (ADD AT THE TOP AND BOTTOM OF YOUR SECTIONS YOUR NAME COMMENTED OUT TO AVOID GITHUB CONFLICTS ) */
+
+
+//(START OF ALEJANDRA'S PORTION)
+
+var visitButton = document.getElementById("placesToVisitButton");
+visitButton.addEventListener("click", function () {
+window.location.href= "thingsToDo.html";
+})
+
+//(END OF ALEJANDRA'S PORTION)

@@ -12,7 +12,7 @@ body{
     align-items: center;
     justify-content: center;
     font-size: 18px;
-    background: url(../assets/background_login_image.jpg);
+    background: url(/images/background_login_image.jpg);
     background-size: cover;
 
 
@@ -83,4 +83,24 @@ header {
 
 .hidden {
     display: none;
+}
+
+.loginImage {
+    height: 200px;
+}
+
+.loginHeader {
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+.radar {
+    color: #0D6FE5;
+}
+
+.roam {
+    color: #03C1AF;
 }
