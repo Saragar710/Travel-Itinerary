@@ -1,0 +1,93 @@
+* {
+    font-family:'Inter', sans-serif;
+    
+}
+
+.budget-header h1 {
+    font-weight: bold;
+}
+
+.expense-list h4 {
+    font-weight: bold;
+}
+.progress-bar {
+    width:20%; 
+}
+.progress {
+    width:50%;
+    margin-bottom:10px;
+    margin-left:5px;
+    
+
+}
+
+
+.budget-wrapper {
+    width:800px;
+   
+    
+}
+.budget-header {
+    display:flex;
+    justify-content: space-between;
+
+}
+
+.budget-amount {
+    
+    display:flex;
+    justify-content: space-between;
+    width:40%;
+    padding-left:5px;
+   
+    
+
+}
+
+.side-bar-budget {
+    display:flex;
+    flex-direction: column;
+    margin-top:5px;
+    padding-right:5px;
+}
+
+.add-expense{
+    margin-bottom:5px;
+}
+
+.expense-buttons {
+    display:flex;
+    padding-left:5px;
+
+    
+    
+}
+
+.button{
+    border-radius: 20px;
+   
+
+}
+
+
+.trip-name {
+    padding-bottom:30px;
+    padding-left:5px;
+}
+
+.wrapper {
+    width:50%;
+}
+
+.edit-budget {
+    margin-right:10px
+    
+}
+
+.expense-list {
+    display:flex;
+    justify-content: space-between;
+    padding-left:5px;
+    padding-right:5px;
+    padding-top:20px;
+}
