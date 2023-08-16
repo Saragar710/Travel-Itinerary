@@ -41,7 +41,19 @@ class login {
             if (error == 0) {
                 console.log ("The form would be submitted in this case");
                 localStorage.setItem("auth",1);
-                this.form.submit();
+                //this.form.submit();
+
+                //if the user has not chosen a destination, they are taken to location page
+                //if user has chosen a distination, they are taken to navbar.html
+                if (localStorage.getItem("chosen Location")==null){
+                    // console.log(localStorage.getItem("chosen Location"));
+                    window.location.href= "location.html";
+                }
+                
+                else {
+                    // console.log(localStorage.getItem("chosen Location"));
+                    window.location.href= "navbar.html";
+                }
                 // window.location.href= "location.html";
             }
         }) 
