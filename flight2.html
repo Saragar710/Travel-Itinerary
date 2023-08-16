@@ -2,11 +2,12 @@
 <html>
 <head>
     <title>Flight Information Webpage</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./css/flight.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 </head>
 <body>
 
@@ -27,8 +28,13 @@
                     <input type="text" id="airlineInput" class="form-control" required>
                     <label for="flightNumberInput">Flight Number:</label>
                     <input type="text" id="flightNumberInput" class="form-control" required>
-                    <label for="dateInput">Date of Flights:</label>
-                    <input type="text" id="dateInput" class="form-control" required>
+                    <label for="dateRangeInput">Date of Flights:</label>
+                    <div class="input-group">
+                        <input type="text" id="dateRangeStartInput" class="form-control" readonly>
+                        <div class="input-group-append">
+                            <button id="openDateRangePicker" class="btn btn-outline-secondary" type="button">Select Dates</button>
+                        </div>
+                    </div>
                 </form>
                 <pre id="flightInfo"></pre>
             </div>
@@ -43,6 +49,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <script src="./source/flight.js"></script>
 </body>
 </html>
