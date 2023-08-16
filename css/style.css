@@ -27,4 +27,13 @@
 
 }
 
-
+@media screen and (max-width: 1280px){
+    body{
+        background-color: lightblue;
+    }
+}
+@media screen and (min-width: 280px){
+    body {
+        background-color: honeydew
+    }
+}
