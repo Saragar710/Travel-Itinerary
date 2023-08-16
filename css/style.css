@@ -12,7 +12,7 @@
 }
 
 .bg{
-    background-image: url("/images/Boardwalk\ over\ ocean.jpg");
+    background-image: url("images/Boardwalk over ocean.jpg");
     height: 100%;
     position: fixed;
     background-position: center;
