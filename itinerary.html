@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Budget Your Next Trip</title>
+    <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="./css/itinerary.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
@@ -13,6 +13,34 @@
 </head>
 
 <body>
+    <nav class="sidenav">
+        <ul>
+          <li><img src="images/ROAMRADAR Logo PNG.png" id="logo"/></li>
+          <li>
+          <a class="nav-link active" aria-current="page" href="navbar.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#budgetButton">Budget</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#hotelButton">Hotels</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#flightButton">Flights</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="restaurant.html">Resturants to Visit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="thingsToDo.html">Places to visit</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="loginPage.html">Log Out </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+<div class="wrapper">
     <section class="budget-wrapper">
         <div class="budget-container">
             <div class="budget-header">
@@ -27,7 +55,7 @@
         </div>
 
   
-  <!-- Modal expense details-->
+  
   <div class="modal fade" id="add-expense-details" tabindex="-1" aria-labelledby="addExpenseLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
       <div class="modal-content">
@@ -76,7 +104,7 @@
     </div>
   </div>
           
-          <!-- Modal -->
+          
           
 
         <div class="trip-name">
@@ -87,7 +115,7 @@
 
         <div class="budget-main-wrapper">
             <div class="budget-amount">
-                <h2 class="expense-total">$<span id="expense-total">0.00</span></h2>
+                <h2 class="expense-total">$0.00 <span></span></h2>
                 <p id="budget-track" class="budgets-amount">Budget:$</p>
             </div>
 
@@ -104,7 +132,7 @@
             </div>
 
 
-            <!-- Modal add trip mate-->
+            
             <div class="modal fade" id="addTripmate" tabindex="-1" aria-labelledby="tripmateLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
@@ -142,7 +170,7 @@
                 </div>
             </div>
 
-            <!--Add budget amount modal-->
+            
 
 
             <div class="modal fade" id="edit-budget-modal" tabindex="-1" aria-labelledby="editBudgetLabel"
@@ -176,7 +204,7 @@
 
         </div>
 
-            <!--Area of expense lists with amount-->
+           
         <div class="expense-list">
             <div class="expense-detail-position">
                 <button id="expense-summary-list" class="accordion expense-wdth">Expenses</button>
@@ -203,7 +231,7 @@
         </div>
 
 
-        
+    </div>
 
     
     

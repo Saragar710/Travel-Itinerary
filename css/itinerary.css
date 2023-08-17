@@ -1,7 +1,9 @@
 * {
     font-family: 'Inter', sans-serif;
+    
 
 }
+
 
 .budget-header h1 {
     font-weight: bold;
@@ -53,9 +55,14 @@ display:none;
     color:aqua;
 }
 
+.wrapper {
+    margin-top:20px;
+    margin-left: 200px;
+}
 
 .budget-wrapper {
-    width: 800px;
+    width: 700px;
+    
 
 
 
