@@ -99,6 +99,11 @@ document.getElementById("checkItinerary").addEventListener("click", function () 
     thingsToDoElement = document.getElementById("thingsToDoItemized")
     thingsToDoElement.innerHTML = "";
 
+    // thingsToDoElement.innerHTML += ("<h3 class=noColor>Want to edit your itinerary?</h3>")
+    // thingsToDoElement.innerHTML += ("<div class = thingsToDoItemized><button type=\"button\" id=\"placesToVisitButton\" class=\"btn btn-info\">Places to visit</button>");
+    // thingsToDoElement.innerHTML += ("<button type = \"button\" id = \"checkItinerary\" class=\"btn btn-info\">Show Itinerary</button></div>");
+
+    
 
     savedKeys.forEach(function (key) {
       var item = localStorage.getItem(key);
@@ -107,7 +112,7 @@ document.getElementById("checkItinerary").addEventListener("click", function () 
         .then((place) => {
     
           placesToVisitEl = document.getElementById("thingsToDoItemized");
-          placesToVisitEl.innerHTML += ("<h2>"+ place.name + "</h2>");
+          placesToVisitEl.innerHTML += ("<div class=placeToVisitItem><h2>"+ place.name + "</h2>");
           placesToVisitEl.innerHTML += ("<b><u>Address:</u></b><br>" + place.formatted_address + "<br><b><u>Rating:<br></u></b>" + place.rating);
           
           if (place.website) {
@@ -117,13 +122,10 @@ document.getElementById("checkItinerary").addEventListener("click", function () 
             placesToVisitEl.innerHTML += ("<br><b><u>Website address:<br></u></b>" + place.website);
         }
 
-        placesToVisitEl.innerHTML += ("<br><b><u>Phone number:<br></u></b>" + place.formatted_phone_number + "<br><br>");
+        placesToVisitEl.innerHTML += ("<br><b><u>Phone number:<br></u></b>" + place.formatted_phone_number + "<br><br></div>");
 
         })
     });
-    thingsToDoElement.innerHTML += ("<h3>Want to edit your itinerary?</h3>")
-    thingsToDoElement.innerHTML += ("<button type=\"button\" id=\"placesToVisitButton\" class=\"btn btn-info\">Places to visit</button>");
-    thingsToDoElement.innerHTML += ("<button type = \"button\" id = \"checkItinerary\">Check Itinerary</button>");
 
     var visitButton = document.getElementById("placesToVisitButton");
     visitButton.addEventListener("click", function () {
