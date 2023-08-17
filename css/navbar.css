@@ -24,10 +24,9 @@ li {
 .sidenav a {
   color: darkblue;
 }
-
 .sidenav {
   height: 100%;
-  width: 170px;
+  width: 180px;
   position: fixed;
   background-color: lightskyblue;
   overflow-x: hidden;
@@ -35,7 +34,9 @@ li {
   border-radius: 5px;
   z-index: 1;
   top: 0;
+  left: 0;
 }
+
 #locationTitle {
   text-align: center;
   margin-left: 200px;
@@ -99,7 +100,7 @@ hr {
 /* End of Alejandra's Portion */
 
 .yoIntro {
-  margin-left: 70px;
-  text-align: left;
-  padding-left: 350px;
+  margin-left: 0px;
+  text-align: center;
+  padding-left: 0px;
 }

@@ -36,11 +36,37 @@ $(document).ready(function() {
     $('#save-expense-details').on('click', function(event){
     event.preventDefault();
     let selectedExpense = $('#expense-list-name').val();
-    $('#add-expense-details').modal('hide');
+    let noSelection = $('#select-result');
+    let userInputAmount = $('#budget-dollar-amount').val();
+    let noEnterAmount = $('#expense-amount-result');
+    
+
     console.log(selectedExpense);
+    console.log(userInputAmount);
+   
+    if (selectedExpense === "") {
+      noSelection.show();
+    } else {
+      noSelection.hide(); // Hide the selection error message
+    }
+
+    if (userInputAmount === "") {
+      noEnterAmount.show();
+    } else {
+      noEnterAmount.hide(); // Hide the amount error message
+    }
+
+    if (selectedExpense !== "" && userInputAmount !== "") {
+  
+
+    localStorage.setItem('selectedExpense', selectedExpense);
+    localStorage.setItem('userInputAmount', userInputAmount);
+    $('#add-expense-details').modal('hide');
+  }
+}); 
+
   });
- 
-});
+
 
 
 

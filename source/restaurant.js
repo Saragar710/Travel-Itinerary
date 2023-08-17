@@ -99,18 +99,16 @@
 
         }
         if (!isContSaved){
-            localStorage.setItem(groupId, content);
+         localStorage.setItem(groupId, content);
 
 
-            var inputKeys = JSON.parse(localStorage.getItem('inputKeys'))  || [];
-            inputKeys.push(groupId);
-            localStorage.setItem('inputKeys', JSON.stringify(inputKeys));
+         var inputKeys = JSON.parse(localStorage.getItem('inputKeys'))  || [];
+         inputKeys.push(groupId);
+         localStorage.setItem('inputKeys', JSON.stringify(inputKeys));
 
-            console.log("Group with ID" + groupId + "saved to local storage.");
-
+         console.log("Group with ID" +  groupId  + " saved to local storage.");
         } else { 
-
-            console.log("Group with ID" + groupId + "already exists in local storage.");
+        console.log("Group with ID" +  groupId  + " already exists in local storage.");
         }
     }
     
@@ -137,4 +135,5 @@
        
   });
   localStorage.removeItem("inputKeys");
+  localStorage.setItem('inputKeys',JSON.stringify([]));
 });

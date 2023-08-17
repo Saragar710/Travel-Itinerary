@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotels</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Raleway:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/hotel.css">
     <link rel="stylesheet" href="css/navbar.css" />
-
+    <title>Hotels</title>
 </head>
 <body>
   <nav class="sidenav">
     <ul>
       <li><img src="images/ROAMRADAR Logo PNG.png" id="logo"/></li>
-      <li>
+      <li class="nav-item">
       <a class="nav-link active" aria-current="page" href="navbar.html">Home</a>
       </li>
       <li class="nav-item">
@@ -43,9 +45,9 @@
           <form id="search-form" class="form-inline">
               <div class="form-group">
                   <label for="city-input" class="mr-2">Find hotels in:</label>
-                  <input type="text" class="form-control mr-2" id="city-input" placeholder="Enter city">
               </div>
-              <button type="submit" class="btn btn-primary btn-search">Search</button>
+              <input type="text" id="city-input" class="form-control" placeholder="Enter city name" required>
+              <button type="submit" class="btn btn-primary btn-search">Search For Hotels</button>
           </form>
       </header>
   </div>
