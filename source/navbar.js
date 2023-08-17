@@ -41,7 +41,99 @@ current look (ADD AT THE TOP AND BOTTOM OF YOUR SECTIONS YOUR NAME COMMENTED OUT
 
 var visitButton = document.getElementById("placesToVisitButton");
 visitButton.addEventListener("click", function () {
-window.location.href= "thingsToDo.html";
+  window.location.href = "thingsToDo.html";
 })
+
+function replacePlacesToVisit() {
+  var savedKeys = JSON.parse(localStorage.getItem('savedKeys'));
+
+  if (savedKeys) {
+    thingsToDoElement = document.getElementById("thingsToDoItemized")
+    thingsToDoElement.innerHTML = "";
+
+    savedKeys.forEach(function (key) {
+      var item = localStorage.getItem(key);
+      document.getElementById("thingsToDoItemized").innerHTML += key;
+      console.log(item);
+    });
+  }
+}
+
+function initMap() {
+  var chosenLocation = JSON.parse(localStorage.getItem("chosen Location"));
+  console.log("the chosen location is " + chosenLocation.location);
+
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: google.maps.LatLng(0, 0),
+    zoom: 15
+  });
+}
+
+function getPlaceDetails(Id) {
+
+  return new Promise((resolve, reject) => {
+    let request = {
+      placeId: Id,
+      fields: ["name", "formatted_address", "rating", "opening_hours", "photos", "website", "geometry", "formatted_phone_number", "user_ratings_total"]
+    };
+
+    let service = new google.maps.places.PlacesService(map);
+
+    service.getDetails(request, (place, status) => {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        resolve(place); // Resolve the promise with the place details
+      }
+      else {
+        reject(new Error(status)); // Reject the promise with an error
+      }
+    });
+  });
+
+}
+
+
+document.getElementById("checkItinerary").addEventListener("click", function () {
+  var savedKeys = JSON.parse(localStorage.getItem('savedKeys'));
+
+  if (savedKeys) {
+    thingsToDoElement = document.getElementById("thingsToDoItemized")
+    thingsToDoElement.innerHTML = "";
+
+
+    savedKeys.forEach(function (key) {
+      var item = localStorage.getItem(key);
+
+      getPlaceDetails(item)
+        .then((place) => {
+    
+          placesToVisitEl = document.getElementById("thingsToDoItemized");
+          placesToVisitEl.innerHTML += ("<h2>"+ place.name + "</h2>");
+          placesToVisitEl.innerHTML += ("<b><u>Address:</u></b><br>" + place.formatted_address + "<br><b><u>Rating:<br></u></b>" + place.rating);
+          
+          if (place.website) {
+            placesToVisitEl.innerHTML += ("<br><b><u>Website address:<br></u></b>" + "<a href=\"" + place.website + "\" target=\"_blank\">" + place.website + "</a>");
+        } else {
+            place.website = "No website address available";
+            placesToVisitEl.innerHTML += ("<br><b><u>Website address:<br></u></b>" + place.website);
+        }
+
+        placesToVisitEl.innerHTML += ("<br><b><u>Phone number:<br></u></b>" + place.formatted_phone_number + "<br><br>");
+
+        })
+    });
+    thingsToDoElement.innerHTML += ("<h3>Want to edit your itinerary?</h3>")
+    thingsToDoElement.innerHTML += ("<button type=\"button\" id=\"placesToVisitButton\" class=\"btn btn-info\">Places to visit</button>");
+    thingsToDoElement.innerHTML += ("<button type = \"button\" id = \"checkItinerary\">Check Itinerary</button>");
+
+    var visitButton = document.getElementById("placesToVisitButton");
+    visitButton.addEventListener("click", function () {
+    window.location.href = "thingsToDo.html";
+    })
+
+  }
+
+
+})
+
 
 //(END OF ALEJANDRA'S PORTION)
