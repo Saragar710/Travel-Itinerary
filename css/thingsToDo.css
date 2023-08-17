@@ -63,9 +63,7 @@ label {
     font-weight: 700;
 }
 
-.thingsToDoContent {
-    padding-right: 2rem;
-}
+
 
 .tableItemName {
     font-size: x-large;
@@ -80,6 +78,8 @@ td {
 
 .thingsToDoContent {
     margin-left: 200px;
+    padding-right: 2rem;
+    
 }
 
 .addItineraryButton {
@@ -89,6 +89,6 @@ td {
 
 .buttonRow{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     text-align: center;
 }
