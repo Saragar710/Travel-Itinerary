@@ -102,8 +102,14 @@ hr {
 }
 
 .displayButtons {
-  display: flex;
-  justify-content: space-around;
+
+  /* max-width: 1000px; */
+  
+}
+
+.centerContent {
+  display: flexbox;
+  justify-content: center;
 }
 
 
@@ -113,3 +119,4 @@ hr {
  
   text-align: center;
 }
+
