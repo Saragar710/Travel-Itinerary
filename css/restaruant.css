@@ -82,3 +82,6 @@ li {
   /* justify-content: space-around; */
   text-align: center;
 }
+.table {
+  background-color: aqua;
+}
