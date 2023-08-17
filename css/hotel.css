@@ -22,7 +22,7 @@ body {
 
 .jumbotron {
     text-align: center;
-    background-color: rgba(255, 254, 254, 0.25); 
+    background-color: rgba(255, 254, 254, 0.75); 
     color: rgb(15, 15, 15); 
     padding: 120px;
     top: 70%;
