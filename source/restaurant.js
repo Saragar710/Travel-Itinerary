@@ -6,13 +6,13 @@
         });
         autocomplete.addListener('place_changed', searchNearbyRestaurants);
 	}	
-        function initializeMap() {
-            var initialLocation = { lat:28.381234066504312, lng:-81.61096094887043};
-            var map = new google.maps.Map(document.getElementById('map'),{
-                center: initialLocation,
-                zoom: 10
-            });
-        }
+        // function initializeMap() {
+        //     var initialLocation = { lat:28.381234066504312, lng:-81.61096094887043};
+        //     var map = new google.maps.Map(document.getElementById('map'),{
+        //         center: initialLocation,
+        //         zoom: 10
+        //     });
+        // }
     
     // function searchNearbyRestaurants(){
     //      document.getElementById('type').onchange = searchNearbyRestaurants
@@ -20,13 +20,13 @@
     function searchNearbyRestaurants(){
 		console.log("Selected searchNearbyRestaurants");
 
-        document.getElementById('restaurant').innerHTML = '';
+        document.getElementById('restaurants').innerHTML = '';
 
-        var restaurant = autocomplete.getRestaurant();
+        var restaurant = autocomplete.getPlace();
         
-        function getRestaurant() {
-        //   console.log("hello")
-		}
+        // function getRestaurant() {
+        // //   console.log("hello")
+		// }
 
         map = new google.maps.Map(document.getElementById('map'), {
             center: restaurant.geometry.location,
@@ -56,13 +56,22 @@
         var cell1 = row.insertCell(0);
         cell1.innerHTML = restaurant.name;
         if(restaurant.photos) {
-            let photoUrl = restaurant.photos[0].getUrl();
+            var image = document.createElement("img");
+            image.src = restaurant.photos[0].getUrl();
             let cell2 = row.insertCell(1);
-            cell2.innerHTML = `<img width="300" height="300" src="${photoUrl}"/>`;
+            image.width = 300;
+            image.height = 200;
+            image.style.borderRadius = 50;
+            cell2.innerHTML = image.outerHTML;
+
         } else { 
-                let photoUrl = "https://via.placeholder.com/150";
-                let cell2 = row.insertCell(1);
-                cell2.innerHTML = `<img width="300" height="300" src="${photoUrl}"/>`;
+            const image = document.createElement("img");
+            image.src = "./images/roam_radar_200x300.png";
+            let cell2 = row.insertCell(1);
+            image.width = 300;
+            image.height = 200;
+            image.style.borderRadius = 50; 
+            cell2.innerHTML = image.outerHTML;
             }
         }
     
