@@ -24,9 +24,6 @@
 
         var restaurant = autocomplete.getPlace();
         
-        // function getRestaurant() {
-        // //   console.log("hello")
-		// }
 
         map = new google.maps.Map(document.getElementById('map'), {
             center: restaurant.geometry.location,
@@ -74,4 +71,57 @@
             cell2.innerHTML = image.outerHTML;
             }
         }
+
+    function addButton() {
+        var rows = document.querySelectorAll('');
+        rows.forEach(row => {
+            row.addEventListener("click", saveRowToLocalStorage);
+        });
     
+
+    function saveRowToLocalStorage(event) {
+        var row = event.currentTarget;
+
+        row.style.background ="white";
+
+        var content = row.classList.toString();
+        var rowId = generateUniqueId();
+
+        let isContentSaved = false;
+        for(let i =0; i< localStorage.lenght; i++) {
+            var storedContent = localStorage.getItem(localStorage.key(i));
+            if (content === storedContent) {
+                isContentSaved = true;
+                break;
+            }
+
+        }
+        if (!isContentSaved){
+            localStorage.setItem(rowId, content);
+
+
+            var savedKeys = JSON.parse(localStorage.getItem('savedKeys'))  || [];
+            savedKeys.push(rowId);
+            localStorage.setItem('savedKeys', JSON.stringify(savedKeys));
+
+            console.log("Row with ID" + rowId + "saved to local storage.");
+        } else { 
+            console.log("Row with ID" + rowId + "already exists in local storage.");
+        }
+    }
+    
+    function generateUniqueId() {
+        return Math.random().toString(36).substring(2,10);
+    }
+  }
+  clearButton = document.getElementById("clearButton");
+  clearButton.addEventListener("click", function () {
+    console.log(savedKeys);
+
+    if (savedKeys) {
+        savedKeys.forEach(function (event) {
+            localStorage.removeItem(event);
+        });
+    }
+        localStorage.removeItem("savedKeys");
+  });
