@@ -18,6 +18,17 @@
 
 }
 
+
+.expense-item {
+    color:red;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+
+    
+
+}
 .alert-amount {
 display:none;
 }
@@ -75,9 +86,12 @@ display:none;
     display:flex;
     justify-content: space-between;
      padding-top:5px;
+     flex-wrap: wrap;
     
 }
-
+.expense-headers h6 {
+    flex: 1 0 50%;
+}
 .notes {
     float:left;
     position:relative;
