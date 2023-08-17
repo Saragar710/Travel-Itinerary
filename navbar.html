@@ -52,14 +52,18 @@
         <h1 id="locationTitle">You're heading to... <span id="outputTitle"> </span>!</h1>
          <div class="row">
         <div class="col">
-          <div>
-          <h2 id="start">Starting your adventure on <span id="outputStart"> </span></h2> 
+          <div id="startAndEnd">
+            
+              <h2 id="start">Starting your adventure on <span id="outputStart"> </span></h2> 
+              
+            
+            <div class="col">
+              
+           <h2 id="end"> Leaving on <span id="outputEnd"> </span></h2>
+              </div>
           </div>
-        </div>
-        <div class="col">
-          <div>
-       <h2 id="end"> Leaving on <span id="outputEnd"> </span></h2>
-          </div>
+          
+
         </div>
       </div>
       <hr>
@@ -76,21 +80,44 @@
 
 <!-- Alejandra's section for naviagation page-->
 
+<div id="map"></div>
 
 <section class= "alejandraIntro" id="alejandra-intro">
-  <h1 id="locationTitle">Places to Visit<span id="outputTitle"> </span></h1>
-  <div class = thingsToDoItemized>
-    <p>Hmm... It looks like you haven't selected where you want to go.</p> 
-    <p> Why not take a look?</p>
-    <button type="button" id="placesToVisitButton" class="btn btn-info">Places to visit</button>
+  <h1 class="placesToVisitTitle">Places to Visit</h1>
+  <br>
+  
+  <div class="displayButtons">
+    <div>
+      <button type="button" id="placesToVisitButton" class="btn btn-info">Places to Visit</button>
+      <button type = "button" class= "btn btn-info" id = "checkItinerary">Check Itinerary</button>
+    </div>
+    
+    <div>
+      <!-- <button type="button" class=" centerContent btn btn-info" id="deletePreviousItem">Delete Last Item</button> -->
+      <button type="button" class=" centerContent btn btn-info" id="clearButton">Clear Itinerary</button>
+    </div>
   </div>
+ 
+  
+  <br><br>
+  <div class = thingsToDoItemized id="thingsToDoItemized"></div>
 </div>
-<hr>
+
 </section>
-
-
-
+<hr>
 <!--END of Alejandra's section-->
+
+<!-- Yo's Section -->
+<section class= "yoIntro" id="yo-intro">
+  <h1 class="flightTitle">Flights</h1>
+  <button type="button" id="flightButton" class="btn btn-info">Flights</button>
+  <h2 class="hotelTitle">Hotels</h2>
+  <br>
+  <button type="button" id="hotelButton" class="btn btn-info">Hotels</button>
+  <br>
+<hr>
+
+<!-- end of Yo's code -->
 
 <!-- Start of Sara's section -->
 
@@ -119,6 +146,11 @@
       crossorigin="anonymous"
     ></script>
   <script src="source/navbar.js"></script>
+
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0UUODTUY1AMUtNuS4fLtUajZFvBY6K-U&libraries=places&callback=initMap"
+    async defer></script>
+
 </html>
 </body>
 </html>
