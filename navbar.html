@@ -76,13 +76,15 @@
 
 <!-- Alejandra's section for naviagation page-->
 
+<div id="map"></div>
 
 <section class= "alejandraIntro" id="alejandra-intro">
-  <h1 id="locationTitle">Places to Visit<span id="outputTitle"> </span></h1>
-  <div class = thingsToDoItemized>
+  <h1 id="placesToVisitTitle" class="placesToVisitTitle">Places to Visit</h1>
+  <div class = thingsToDoItemized id="thingsToDoItemized">
     <p>Hmm... It looks like you haven't selected where you want to go.</p> 
     <p> Why not take a look?</p>
     <button type="button" id="placesToVisitButton" class="btn btn-info">Places to visit</button>
+    <button type = "button" id = "checkItinerary">Check Itinerary</button>
   </div>
 </div>
 <hr>
@@ -100,6 +102,11 @@
       crossorigin="anonymous"
     ></script>
   <script src="source/navbar.js"></script>
+
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0UUODTUY1AMUtNuS4fLtUajZFvBY6K-U&libraries=places&callback=initMap"
+    async defer></script>
+
 </html>
 </body>
 </html>
