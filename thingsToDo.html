@@ -19,42 +19,42 @@
 </head>
 <body>
     
-    <nav class="sidenav">
-        <ul>
-          <li><img src="images/ROAMRADAR Logo (transparent background) (4).jpg" id="logo"/></li>
-          <li>
-          <a class="nav-link" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Budget</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Hotels</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="flight2.html">Flights</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Explore</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="restaurant.html">Resturants to Visit</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Places to visit</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="#">Itinerary</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+  <nav class="sidenav">
+    <ul>
+      <li><img src="images/ROAMRADAR Logo PNG.png" id="logo"/></li>
+      <li>
+      <a class="nav-link active" aria-current="page" href="navbar.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="itinerary.html">Budget</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="hotels.html">Hotels</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="flight2.html">Flights</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="restaurant.html">Resturants to Visit</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="thingsToDo.html">Places to visit</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="loginPage.html">Log Out </a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
+    <h1 class="header">Places to Visit</h1>
     <div class="thingsToDoContent Text">
-        <h1 class="header">Places to Visit</h1>
+        
 
         <div id="map"></div>
         <div class="form-group">
+
+          
             <label class=formPrompt for="location">Where are you off to?</label>
             <input type="text" class="form-control" id="autocomplete" placeholder="Enter location">
         </div>
@@ -73,14 +73,17 @@
             </select>
         </div>
 
-        <br><br>
+        <br>
+        <div class="buttonRow">
+        <button type="button" class=" centerContent btn btn-light" id = "clearButton">Clear itinerary</button>
+        </div>
+        <br>
 
-        <table class="table table-bordered table-hover" id="places">Select a location and entertainment to see which wonderful places you can visit in the area!
-
+        <table class="table table-bordered table-hover" id="places"><h3>Click on rows to add destination to your itnerary:</h3>
             <tr>
-                <th>
+                <!-- <th>
                     Add to Itinerary
-                </th>
+                </th> -->
                 <th>
                 Contact information
                 </th>
