@@ -53,37 +53,39 @@
     // function searchNearByRestaurants(){
     //      document.getElementById('type').onchange = searchNearByRestaurants
     // }
-    function searchNearByRestaurants(){
-		console.log("Selected searchNearByRestaurants");
+    function searchNearbyRestaurants(){
+		console.log("Selected searchNearbyRestaurants");
 
-        document.getElementById('restaurant').innerHTML = ''
+        document.getElementById('restaurant').innerHTML = '';
 
         var restaurant = autocomplete.getRestaurant();
         
-        function getRestaurant() {
-          console.log("hello")
-        }
+        // function getRestaurant() {
+        //   console.log("hello")
+        
 
         map = new google.maps.Map(document.getElementById('map'), {
-            center: restauarant.geometry.location,
+            center: restaurant.geometry.location,
             zoom: 15
         });
 
-        service = new google.maps.places.RestaurantsService(map);
+        service = new google.maps.places.PlacesService(map);
         service.nearbySearch({
-            location: place.geometry.location,
+            location: restaurant.geometry.location,
             radius: '500',
-            type: [restaurants]
+            type: ['restaurants']
         }, callback)
     }
     function callback(results, status) {
-        if(status === google.maps.places.PlacesServiceStatus.OK){
-        console.log(results.length)
-        for(var i = 0; i < results.length; i++) {
-            createMarker(results[i]);
-        }}
+        if(status === google.maps.places.PlacesServiceStatus.OK) {
+           console.log(results.length)
+           for(var i = 0; i < results.length; i++) {
+               createMarker(results[i]);
+        }
+	}
+	}
 
-    function createMarker(restaurant){
+    function createMarker(restaurant) {
         console.log(restaurant);
         var table = document.getElementById("restaurants");
         var row = table.insertRow();
@@ -93,10 +95,10 @@
             let photoUrl = restaurant.photos[0].getUrl();
             let cell2 = row.insertCell(1);
             cell2.innerHTML = `<img width="300" height="300" src="${photoUrl}"/>`;
-        }else{ 
+        } else { 
                 let photoUrl = "https://via.placeholder.com/150";
                 let cell2 = row.insertCell(1);
                 cell2.innerHTML = `<img width="300" height="300" src="${photoUrl}"/>`;
             }
         }
-    }
+    
