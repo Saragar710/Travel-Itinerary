@@ -139,3 +139,14 @@ document.getElementById("checkItinerary").addEventListener("click", function () 
 
 
 //(END OF ALEJANDRA'S PORTION)
+
+
+// (Yo's section)
+var visitButton = document.getElementById("flightButton");
+    visitButton.addEventListener("click", function () {
+    window.location.href = "flight2.html";
+    })
+    var visitButton = document.getElementById("hotelButton");
+    visitButton.addEventListener("click", function () {
+    window.location.href = "hotels.html";
+    })
