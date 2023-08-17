@@ -75,9 +75,9 @@
     
     
     function addButton() {
-        var group = document.querySelectorAll('table');
-        groups.forEach(row => {
-            group.addEventListener("click", saveGroupToLocalStorage);
+        var groupId = document.querySelectorAll('table');
+        groupID.forEach(row => {
+            groupID.addEventListener("click", saveGroupToLocalStorage);
         });
     
 
@@ -87,11 +87,11 @@
         group.style.background ="white";
 
         var content = group.classList.toString();
-        var groupId = generateUniqId();
+        var restaurantId = generateUniqId();
 
         let isContSaved = false;
         for(let i =0; i < localStorage.length; i++) {
-            var storedCont = localStorage.getItem(localStorage.key(i));
+            var storedCont = localStorage.getItem("restaurantId" );
             if (content === storedCont) {
                 isContSaved = true;
                 break;
@@ -99,16 +99,16 @@
 
         }
         if (!isContSaved){
-         localStorage.setItem(groupId, content);
+         localStorage.setItem(restaurantId, content);
 
 
-         var inputKeys = JSON.parse(localStorage.getItem('inputKeys'))  || [];
-         inputKeys.push(groupId);
+         var inputKeys = JSON.parse(localStorage.getItem('inputKeys'));
+         inputKeys.push(restaurantId);
          localStorage.setItem('inputKeys', JSON.stringify(inputKeys));
 
-         console.log("Group with ID" +  groupId  + " saved to local storage.");
+         console.log("restaurant with ID" +  groupId  + " saved to local storage.");
         } else { 
-        console.log("Group with ID" +  groupId  + " already exists in local storage.");
+        console.log("restaurant with ID" +  groupId  + " already exists in local storage.");
         }
     }
     
@@ -119,7 +119,7 @@
 
   clearAllButton = document.getElementById("clearAllButton");
   clearAllButton.addEventListener("click", function () {
-    var restaurantTables = document.querySelectorAll(".restaruantTable");
+    var restaurantTables = document.querySelectorAll(".restaurantTable");
     restaurantTables.forEach(function (restaurantTable) {
         restaurantTable.style.background = "#87CEFA";
 
