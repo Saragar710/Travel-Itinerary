@@ -11,8 +11,21 @@
     font-weight: bold;
 }
 
+.alert-option {
+    color:red;
+    font-weight:bold;
+    
+
+}
+
+.alert-amount {
+display:none;
+}
 
 
+.alert-select {
+display:none;
+}
 .progress-bar {
     width: 20%;
 }
@@ -23,6 +36,10 @@
     margin-left: 5px;
 
 
+}
+
+.optional-comment {
+    color:aqua;
 }
 
 

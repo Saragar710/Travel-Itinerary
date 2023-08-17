@@ -24,10 +24,9 @@ li {
 .sidenav a {
   color: darkblue;
 }
-
 .sidenav {
   height: 100%;
-  width: 170px;
+  width: 180px;
   position: fixed;
   background-color: lightskyblue;
   overflow-x: hidden;
@@ -35,15 +34,23 @@ li {
   border-radius: 5px;
   z-index: 1;
   top: 0;
+  left: 0;
 }
+
 #locationTitle {
   text-align: center;
   margin-left: 200px;
   margin-bottom: 30px;
   margin-top: 30px;
 }
+
+#startAndEnd {
+  text-align: center;
+  display:flex;
+}
+
 #start {
-  margin-left: 260px;
+  margin-left: 200px;
   text-align: center;
 }
 #end {
@@ -67,6 +74,33 @@ hr {
 
 .alejandraIntro {
   margin-left: 200px;
+  text-align: center;
 }
 
+.thingsToDoItemized {
+  background-color: aliceblue;
+  margin-right: 50px;
+
+}
+
+.placeToVisitItem {
+  background-color: #87CEFA;
+}
+
+.noColor {
+  background-color: white;
+}
+
+.displayButtons {
+  display: flex;
+  justify-content: space-around;
+}
+
+
 /* End of Alejandra's Portion */
+
+.yoIntro {
+  margin-left: 0px;
+  text-align: center;
+  padding-left: 0px;
+}
