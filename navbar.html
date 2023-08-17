@@ -9,6 +9,13 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+<!-- Yo's Code -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ <!--end of Yo's section  -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Raleway:ital@1&display=swap" rel="stylesheet">
@@ -52,14 +59,18 @@
         <h1 id="locationTitle">You're heading to... <span id="outputTitle"> </span>!</h1>
          <div class="row">
         <div class="col">
-          <div>
-          <h2 id="start">Starting your adventure on <span id="outputStart"> </span></h2> 
+          <div id="startAndEnd">
+            
+              <h3 id="start">Starting your adventure on <span id="outputStart"> </span></h3> 
+              
+            
+            <div class="col">
+              
+           <h3 id="end"> Leaving on <span id="outputEnd"> </span></h3>
+              </div>
           </div>
-        </div>
-        <div class="col">
-          <div>
-       <h2 id="end"> Leaving on <span id="outputEnd"> </span></h2>
-          </div>
+          
+
         </div>
       </div>
       <hr>
@@ -70,30 +81,74 @@
 <!-- current look (ADD AT THE TOP AND BOTTOM OF YOUR SECTIONS YOUR NAME COMMENTED OUT TO AVOID GITHUB CONFLICTS )  -->
 
 
-
-
-
-
 <!-- Alejandra's section for naviagation page-->
 
 <div id="map"></div>
 
 <section class= "alejandraIntro" id="alejandra-intro">
-  <h1 id="placesToVisitTitle" class="placesToVisitTitle">Places to Visit</h1>
-  <div class = thingsToDoItemized id="thingsToDoItemized">
-    <p>Hmm... It looks like you haven't selected where you want to go.</p> 
-    <p> Why not take a look?</p>
-    <button type="button" id="placesToVisitButton" class="btn btn-info">Places to visit</button>
-    <button type = "button" id = "checkItinerary">Check Itinerary</button>
+  <h1 class="placesToVisitTitle">Places to Visit</h1>
+  <br>
+  
+  <div class="displayButtons">
+    <div>
+      <button type="button" id="placesToVisitButton" class="btn btn-info">Places to Visit</button>
+      <button type = "button" class= "btn btn-info" id = "checkItinerary">Check Itinerary</button>
+    </div>
+    
+    <div>
+      <!-- <button type="button" class=" centerContent btn btn-info" id="deletePreviousItem">Delete Last Item</button> -->
+      <button type="button" class=" centerContent btn btn-info" id="clearButton">Clear Itinerary</button>
+    </div>
   </div>
+ 
+  
+  <br><br>
+  <div class = thingsToDoItemized id="thingsToDoItemized"></div>
 </div>
+
+</section>
 <hr>
+<!--END of Alejandra's section-->
+
+<!-- Yo's Section -->
+<section class="yoIntro" id="yo-intro">
+  <div class="row">
+    <div class="col-md-6">
+      <h1 class="flightTitle">Flights</h1>
+      <br>
+      <button type="button" id="flightButton" class="btn btn-info">Flights</button>
+    </div>
+    <div class="col-md-6">
+      <h1 class="hotelTitle">Hotels</h1>
+      <br>
+      <button type="button" id="hotelButton" class="btn btn-info">Hotels</button>
+    </div>
+  </div>
+  <hr>
 </section>
 
 
+<!-- end of Yo's code -->
 
-<!--END of Alejandra's section-->
+<!-- Start of Sara's section -->
 
+<div id="map"></div>
+
+<section class="saraIntro" id="sara-intro>"
+  <h1 class="restaruantTitle">Restaurants to Visit</h1>
+  <br>
+  <div class="clickButtons">
+  <div>
+  <button type="button" id="restaurantsToVisitButton" class="btn btn-info">Restaurants to Visit</button>
+  <button type="button" class="btn btn-info" id="goToItinerary">Go to Itinerary</button>
+  </div>
+
+  <div>
+    <button type="button" class="btn btn-info" id="clearAllButton">Clear All</button>
+  </div>
+  </div>
+
+<!-- End of Sara's section -->
 
 </body>
   <script
