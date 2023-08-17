@@ -58,12 +58,48 @@ $(document).ready(function() {
 
     if (selectedExpense !== "" && userInputAmount !== "") {
   
+const e = localStorage.getItem('expenses') ? JSON.parse(localStorage.getItem('expenses')) : [];
+e.push({selectedExpense, userInputAmount})
+localStorage.setItem('expenses', JSON.stringify(e));
 
+let totalExpense = 0;
+
+// let totalExpense = $('#expense-total').text();
+// 
+console.log(totalExpense);
+for(let x = 0; x < e.length; x++) {
+  console.log(e[x].selectedExpense, e[x].userInputAmount);
+totalExpense += parseInt(e[x].userInputAmount)
+console.log('total', totalExpense)
+$('#expense-total').text(totalExpense);
+let expenseWrapper = $('<div>');
+let expenseName = $('<div>')
+expenseName.text(e[x].selectedExpense);
+let expenseValue = $('<div>');
+expenseValue.text(e[x].userInputAmount);
+expenseWrapper.append(expenseName).append(expenseValue);
+expenseWrapper.addClass('expense-item');
+$('#add-expense-js').append(expenseWrapper);
+
+
+}
     localStorage.setItem('selectedExpense', selectedExpense);
     localStorage.setItem('userInputAmount', userInputAmount);
-    $('#add-expense-details').modal('hide');
+    
+    const expenseContainer = $('#add-expense-js');
+    for (let i = 0; i < 1; i++) {
+      const newExpenseDiv = $('<div>' , {
+        class: 'expense-item',
+        text: 'Expense ' + (i + 1) + ': ' + selectedExpense + ' -$' + userInputAmount //css fixed
+      });
+      expenseContainer.append(newExpenseDiv);
+  
+      $('#add-expense-details').modal('hide');
+    }
+    
   }
 }); 
+ 
 
   });
 
