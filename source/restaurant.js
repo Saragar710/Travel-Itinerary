@@ -14,8 +14,8 @@
             });
         }
     
-    function searchNearByRestaurants(){
-         document.getElementById('type').onchange = searchNearByRestaurants
+    function searchNearbyRestaurants(){
+         document.getElementById('type').onchange = searchNearbyRestaurants
     }
     function searchNearbyRestaurants(){
 		console.log("Selected searchNearbyRestaurants");
