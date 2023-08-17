@@ -1,11 +1,4 @@
 
-
-
-
-
-
-  
-debugger;
     function initMap() {
         autocomplete = new google.maps.places.Autocomplete((document.getElementById('autocomplete')),
         {
@@ -21,9 +14,9 @@ debugger;
             });
         }
     
-    // function searchNearByRestaurants(){
-    //      document.getElementById('type').onchange = searchNearByRestaurants
-    // }
+    function searchNearByRestaurants(){
+         document.getElementById('type').onchange = searchNearByRestaurants
+    }
     function searchNearbyRestaurants(){
 		console.log("Selected searchNearbyRestaurants");
 
