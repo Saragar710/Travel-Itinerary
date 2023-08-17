@@ -2,7 +2,7 @@
 // apiKey="AIzaSyBfC6_iJVBClIW-uA3m3qaR3g6w9zxmbvs "
 
 
-var myApi = "AIzaSyDa-NcckTIrTU8Qhz437JcSJoK30OswcGg"
+// var myApi = "AIzaSyDa-NcckTIrTU8Qhz437JcSJoK30OswcGg"
 // AIzaSyDa-NcckTIrTU8Qhz437JcSJoK30OswcGg //google api key
 
 
@@ -39,17 +39,17 @@ var myApi = "AIzaSyDa-NcckTIrTU8Qhz437JcSJoK30OswcGg"
         autocomplete = new google.maps.places.Autocomplete((document.getElementById('autocomplete')),
         {
             types:['geocode']
-        })
+        });
         autocomplete.addListener('place_changed', searchNearByRestaurants);
-
-        // function initMap() {
-        //     var initialLocation = { lat:28.381234066504312, lan:-81.61096094887043};
-        //     map = new google.maps.Map(document.getElementById('map'),{
-        //         center: initialLocation,
-        //         zoom: 10
-        //     });
-        // }
-    }
+	}	
+        function initializeMap() {
+            var initialLocation = { lat:28.381234066504312, lng:-81.61096094887043};
+            var map = new google.maps.Map(document.getElementById('map'),{
+                center: initialLocation,
+                zoom: 10
+            });
+        }
+    
     // function searchNearByRestaurants(){
     //      document.getElementById('type').onchange = searchNearByRestaurants
     // }
