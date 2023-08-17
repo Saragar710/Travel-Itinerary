@@ -86,29 +86,31 @@
 
         group.style.background ="white";
 
-        var content = row.classList.toString();
-        var rowId = generateUniqueId();
+        var content = group.classList.toString();
+        var groupId = generateUniqId();
 
         let isContSaved = false;
         for(let i =0; i < localStorage.length; i++) {
             var storedCont = localStorage.getItem(localStorage.key(i));
             if (content === storedCont) {
-                isContentSaved = true;
+                isContSaved = true;
                 break;
             }
 
         }
         if (!isContSaved){
-            localStorage.setItem(rowId, content);
+            localStorage.setItem(groupId, content);
 
 
             var inputKeys = JSON.parse(localStorage.getItem('inputKeys'))  || [];
-            inputKeys.push(rowId);
-            localStorage.setItem('savedKeys', JSON.stringify(inputKeys));
+            inputKeys.push(groupId);
+            localStorage.setItem('inputKeys', JSON.stringify(inputKeys));
 
-            console.log("Row with ID" + rowId + "saved to local storage.");
+            console.log("Group with ID" + groupId + "saved to local storage.");
+
         } else { 
-            console.log("Row with ID" + rowId + "already exists in local storage.");
+
+            console.log("Group with ID" + groupId + "already exists in local storage.");
         }
     }
     
@@ -119,9 +121,9 @@
 
   clearAllButton = document.getElementById("clearAllButton");
   clearAllButton.addEventListener("click", function () {
-    var restaurantTables = document.querySelectorAll("restaruantTable");
-    restaurantTables.forEach(function (restaruantTable){
-        restaruantTable.style.background = "#87CEFA";
+    var restaurantTables = document.querySelectorAll(".restaruantTable");
+    restaurantTables.forEach(function (restaurantTable) {
+        restaurantTable.style.background = "#87CEFA";
 
         var inputKeys = JSON.parse(localStorage.getItem('inputKeys'));
     
@@ -132,6 +134,7 @@
             localStorage.removeItem(event);
         });
     }
-        localStorage.removeItem("inputKeys");
+       
   });
+  localStorage.removeItem("inputKeys");
 });
