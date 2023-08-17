@@ -117,17 +117,17 @@
     }
   }
 
-  clearButton = document.getElementById("clearButton");
-  clearButton.addEventListener("click", function () {
+  clearAllButton = document.getElementById("clearAllButton");
+  clearAllButton.addEventListener("click", function () {
     var restaurantTables = document.querySelectorAll("restaruantTable");
-    restaurantTablesables.forEach(function (restaruantTableable){
+    restaurantTables.forEach(function (restaruantTable){
         restaruantTable.style.background = "#87CEFA";
 
         var inputKeys = JSON.parse(localStorage.getItem('inputKeys'));
     
     console.log(inputKeys);
 
-    if (inputKeysKeys) {
+    if (inputKeys) {
         inputKeys.forEach(function (event) {
             localStorage.removeItem(event);
         });
