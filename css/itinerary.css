@@ -38,6 +38,10 @@ display:none;
 
 }
 
+.optional-comment {
+    color:aqua;
+}
+
 
 .budget-wrapper {
     width: 800px;
