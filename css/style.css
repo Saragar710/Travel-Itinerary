@@ -9,7 +9,14 @@
     font-style: normal;
     font-weight: 300;
 }
+header {
+/* font-size: 8px; */
+background-position: 100% -40px;
+float: right;
+margin-right: auto;
+margin-top: 20%;
 
+}
 .bg{
     background-image: url("images/Boardwalk over ocean.jpg");
     height: 100%;
