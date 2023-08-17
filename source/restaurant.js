@@ -1,46 +1,10 @@
-// var requestUrl =
-// apiKey="AIzaSyBfC6_iJVBClIW-uA3m3qaR3g6w9zxmbvs "
 
-
-// var myApi = "AIzaSyDa-NcckTIrTU8Qhz437JcSJoK30OswcGg"
-// AIzaSyDa-NcckTIrTU8Qhz437JcSJoK30OswcGg //google api key
-
-
-
-
-
-
-// const url = 'https://worldwide-restaurants.p.rapidapi.com/search';
-// const options = {
-// 	method: 'POST',
-// 	headers: {
-// 		'content-type': 'application/x-www-form-urlencoded',
-// 		'X-RapidAPI-Key': 'b6a9e3060amsha6d19ed1a224e1ep14dbb8jsn15df1069f330',
-// 		'X-RapidAPI-Host': 'worldwide-restaurants.p.rapidapi.com'
-// 	},
-// 	body: new URLSearchParams({
-// 		language: 'en_US',
-// 		limit: '30',
-// 		location_id: '297704',
-// 		currency: 'USD'
-// 	})
-// };
-
-// try {
-// 	const response = await fetch(url, options);
-// 	const result = await response.text();
-// 	console.log(result);
-// } catch (error) {
-// 	console.error(error);
-// 
-  
-debugger;
     function initMap() {
         autocomplete = new google.maps.places.Autocomplete((document.getElementById('autocomplete')),
         {
             types:['geocode']
         });
-        autocomplete.addListener('place_changed', searchNearByRestaurants);
+        autocomplete.addListener('place_changed', searchNearbyRestaurants);
 	}	
         function initializeMap() {
             var initialLocation = { lat:28.381234066504312, lng:-81.61096094887043};
@@ -50,9 +14,9 @@ debugger;
             });
         }
     
-    // function searchNearByRestaurants(){
-    //      document.getElementById('type').onchange = searchNearByRestaurants
-    // }
+    // function searchNearbyRestaurants(){
+    //      document.getElementById('type').onchange = searchNearbyRestaurants
+    
     function searchNearbyRestaurants(){
 		console.log("Selected searchNearbyRestaurants");
 
@@ -60,9 +24,9 @@ debugger;
 
         var restaurant = autocomplete.getRestaurant();
         
-        // function getRestaurant() {
+        function getRestaurant() {
         //   console.log("hello")
-        
+		}
 
         map = new google.maps.Map(document.getElementById('map'), {
             center: restaurant.geometry.location,
