@@ -71,9 +71,11 @@
             cell2.innerHTML = image.outerHTML;
             }
         }
-
+    document.getElementById("type").onchange = searchNearbyRestaurants;
+    
+    
     function addButton() {
-        var rows = document.querySelectorAll('');
+        var rows = document.querySelectorAll('table');
         rows.forEach(row => {
             row.addEventListener("click", saveRowToLocalStorage);
         });
@@ -88,7 +90,7 @@
         var rowId = generateUniqueId();
 
         let isContentSaved = false;
-        for(let i =0; i< localStorage.lenght; i++) {
+        for(let i =0; i < localStorage.length; i++) {
             var storedContent = localStorage.getItem(localStorage.key(i));
             if (content === storedContent) {
                 isContentSaved = true;
@@ -114,8 +116,15 @@
         return Math.random().toString(36).substring(2,10);
     }
   }
+
   clearButton = document.getElementById("clearButton");
   clearButton.addEventListener("click", function () {
+    var tables = document.querySelectorAll("table");
+    tables.forEach(function (table){
+        table.style.background = "#87CEFA";
+
+        var savedKeys = JSON.parse(localStorage.getItem('savedKeys'));
+    
     console.log(savedKeys);
 
     if (savedKeys) {
@@ -125,3 +134,4 @@
     }
         localStorage.removeItem("savedKeys");
   });
+});
