@@ -140,8 +140,14 @@ background-color: #87CEFA;
 }
 
 .displayButtons {
-  display: flex;
-  justify-content: space-around;
+
+  /* max-width: 1000px; */
+  
+}
+
+.centerContent {
+  display: flexbox;
+  justify-content: center;
 }
 
 
@@ -151,3 +157,4 @@ background-color: #87CEFA;
  
   text-align: center;
 }
+
