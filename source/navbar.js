@@ -183,3 +183,12 @@ var visitButton = document.getElementById("flightButton");
     visitButton.addEventListener("click", function () {
     window.location.href = "hotels.html";
     })
+
+     var budgetButton = document.getElementById("budgetButton");
+     budgetButton.addEventListener("click", function () {
+       window.location.href = "itinerary.html";
+     });
+     var resturantButton = document.getElementById("goToRestaurants");
+     resturantButton.addEventListener("click", function () {
+       window.location.href = "restaurant.html";
+     });
