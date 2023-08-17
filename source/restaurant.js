@@ -89,22 +89,22 @@
         var content = row.classList.toString();
         var rowId = generateUniqueId();
 
-        let isContentSaved = false;
+        let isContSaved = false;
         for(let i =0; i < localStorage.length; i++) {
-            var storedContent = localStorage.getItem(localStorage.key(i));
-            if (content === storedContent) {
+            var storedCont = localStorage.getItem(localStorage.key(i));
+            if (content === storedCont) {
                 isContentSaved = true;
                 break;
             }
 
         }
-        if (!isContentSaved){
+        if (!isContSaved){
             localStorage.setItem(rowId, content);
 
 
-            var savedKeys = JSON.parse(localStorage.getItem('savedKeys'))  || [];
-            savedKeys.push(rowId);
-            localStorage.setItem('savedKeys', JSON.stringify(savedKeys));
+            var inputKeys = JSON.parse(localStorage.getItem('inputKeys'))  || [];
+            inputKeys.push(rowId);
+            localStorage.setItem('savedKeys', JSON.stringify(inputKeys));
 
             console.log("Row with ID" + rowId + "saved to local storage.");
         } else { 
@@ -112,26 +112,26 @@
         }
     }
     
-    function generateUniqueId() {
+    function generateUniqId() {
         return Math.random().toString(36).substring(2,10);
     }
   }
 
   clearButton = document.getElementById("clearButton");
   clearButton.addEventListener("click", function () {
-    var tables = document.querySelectorAll("table");
-    tables.forEach(function (table){
-        table.style.background = "#87CEFA";
+    var restaurantTables = document.querySelectorAll("restaruantTable");
+    restaurantTablesables.forEach(function (restaruantTableable){
+        restaruantTable.style.background = "#87CEFA";
 
-        var savedKeys = JSON.parse(localStorage.getItem('savedKeys'));
+        var inputKeys = JSON.parse(localStorage.getItem('inputKeys'));
     
-    console.log(savedKeys);
+    console.log(inputKeys);
 
-    if (savedKeys) {
-        savedKeys.forEach(function (event) {
+    if (inputKeysKeys) {
+        inputKeys.forEach(function (event) {
             localStorage.removeItem(event);
         });
     }
-        localStorage.removeItem("savedKeys");
+        localStorage.removeItem("inputKeys");
   });
 });
