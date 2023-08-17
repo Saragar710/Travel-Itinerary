@@ -24,7 +24,6 @@ li {
 .sidenav a {
   color: darkblue;
 }
-
 .sidenav {
   height: 100%;
   width: 170px;
@@ -35,7 +34,9 @@ li {
   border-radius: 5px;
   z-index: 1;
   top: 0;
+  left: 0;
 }
+
 #locationTitle {
   text-align: center;
   margin-left: 200px;
