@@ -1,67 +1,28 @@
-// var requestUrl =
-// apiKey="AIzaSyBfC6_iJVBClIW-uA3m3qaR3g6w9zxmbvs "
 
-
-// var myApi = "AIzaSyDa-NcckTIrTU8Qhz437JcSJoK30OswcGg"
-// AIzaSyDa-NcckTIrTU8Qhz437JcSJoK30OswcGg //google api key
-
-
-
-
-
-
-// const url = 'https://worldwide-restaurants.p.rapidapi.com/search';
-// const options = {
-// 	method: 'POST',
-// 	headers: {
-// 		'content-type': 'application/x-www-form-urlencoded',
-// 		'X-RapidAPI-Key': 'b6a9e3060amsha6d19ed1a224e1ep14dbb8jsn15df1069f330',
-// 		'X-RapidAPI-Host': 'worldwide-restaurants.p.rapidapi.com'
-// 	},
-// 	body: new URLSearchParams({
-// 		language: 'en_US',
-// 		limit: '30',
-// 		location_id: '297704',
-// 		currency: 'USD'
-// 	})
-// };
-
-// try {
-// 	const response = await fetch(url, options);
-// 	const result = await response.text();
-// 	console.log(result);
-// } catch (error) {
-// 	console.error(error);
-// 
-  
-debugger;
     function initMap() {
         autocomplete = new google.maps.places.Autocomplete((document.getElementById('autocomplete')),
         {
             types:['geocode']
         });
-        autocomplete.addListener('place_changed', searchNearByRestaurants);
+        autocomplete.addListener('place_changed', searchNearbyRestaurants);
 	}	
-        function initializeMap() {
-            var initialLocation = { lat:28.381234066504312, lng:-81.61096094887043};
-            var map = new google.maps.Map(document.getElementById('map'),{
-                center: initialLocation,
-                zoom: 10
-            });
-        }
+        // function initializeMap() {
+        //     var initialLocation = { lat:28.381234066504312, lng:-81.61096094887043};
+        //     var map = new google.maps.Map(document.getElementById('map'),{
+        //         center: initialLocation,
+        //         zoom: 10
+        //     });
+        // }
     
-    // function searchNearByRestaurants(){
-    //      document.getElementById('type').onchange = searchNearByRestaurants
-    // }
+    // function searchNearbyRestaurants(){
+    //      document.getElementById('type').onchange = searchNearbyRestaurants
+    
     function searchNearbyRestaurants(){
 		console.log("Selected searchNearbyRestaurants");
 
-        document.getElementById('restaurant').innerHTML = '';
+        document.getElementById('restaurants').innerHTML = '';
 
-        var restaurant = autocomplete.getRestaurant();
-        
-        // function getRestaurant() {
-        //   console.log("hello")
+        var restaurant = autocomplete.getPlace();
         
 
         map = new google.maps.Map(document.getElementById('map'), {
@@ -92,13 +53,75 @@ debugger;
         var cell1 = row.insertCell(0);
         cell1.innerHTML = restaurant.name;
         if(restaurant.photos) {
-            let photoUrl = restaurant.photos[0].getUrl();
+            var image = document.createElement("img");
+            image.src = restaurant.photos[0].getUrl();
             let cell2 = row.insertCell(1);
-            cell2.innerHTML = `<img width="300" height="300" src="${photoUrl}"/>`;
+            image.width = 300;
+            image.height = 200;
+            image.style.borderRadius = 50;
+            cell2.innerHTML = image.outerHTML;
+
         } else { 
-                let photoUrl = "https://via.placeholder.com/150";
-                let cell2 = row.insertCell(1);
-                cell2.innerHTML = `<img width="300" height="300" src="${photoUrl}"/>`;
+            const image = document.createElement("img");
+            image.src = "./images/roam_radar_200x300.png";
+            let cell2 = row.insertCell(1);
+            image.width = 300;
+            image.height = 200;
+            image.style.borderRadius = 50; 
+            cell2.innerHTML = image.outerHTML;
             }
         }
+
+    function addButton() {
+        var rows = document.querySelectorAll('');
+        rows.forEach(row => {
+            row.addEventListener("click", saveRowToLocalStorage);
+        });
     
+
+    function saveRowToLocalStorage(event) {
+        var row = event.currentTarget;
+
+        row.style.background ="white";
+
+        var content = row.classList.toString();
+        var rowId = generateUniqueId();
+
+        let isContentSaved = false;
+        for(let i =0; i< localStorage.lenght; i++) {
+            var storedContent = localStorage.getItem(localStorage.key(i));
+            if (content === storedContent) {
+                isContentSaved = true;
+                break;
+            }
+
+        }
+        if (!isContentSaved){
+            localStorage.setItem(rowId, content);
+
+
+            var savedKeys = JSON.parse(localStorage.getItem('savedKeys'))  || [];
+            savedKeys.push(rowId);
+            localStorage.setItem('savedKeys', JSON.stringify(savedKeys));
+
+            console.log("Row with ID" + rowId + "saved to local storage.");
+        } else { 
+            console.log("Row with ID" + rowId + "already exists in local storage.");
+        }
+    }
+    
+    function generateUniqueId() {
+        return Math.random().toString(36).substring(2,10);
+    }
+  }
+  clearButton = document.getElementById("clearButton");
+  clearButton.addEventListener("click", function () {
+    console.log(savedKeys);
+
+    if (savedKeys) {
+        savedKeys.forEach(function (event) {
+            localStorage.removeItem(event);
+        });
+    }
+        localStorage.removeItem("savedKeys");
+  });
