@@ -4,7 +4,7 @@
         {
             types:['geocode']
         });
-        autocomplete.addListener('place_changed', searchNearByRestaurants);
+        autocomplete.addListener('place_changed', searchNearbyRestaurants);
 	}	
         function initializeMap() {
             var initialLocation = { lat:28.381234066504312, lng:-81.61096094887043};
@@ -14,9 +14,9 @@
             });
         }
     
-    function searchNearbyRestaurants(){
-         document.getElementById('type').onchange = searchNearbyRestaurants
-    }
+    // function searchNearbyRestaurants(){
+    //      document.getElementById('type').onchange = searchNearbyRestaurants
+    
     function searchNearbyRestaurants(){
 		console.log("Selected searchNearbyRestaurants");
 
@@ -24,9 +24,9 @@
 
         var restaurant = autocomplete.getRestaurant();
         
-        // function getRestaurant() {
+        function getRestaurant() {
         //   console.log("hello")
-        
+		}
 
         map = new google.maps.Map(document.getElementById('map'), {
             center: restaurant.geometry.location,
