@@ -75,16 +75,16 @@
     
     
     function addButton() {
-        var rows = document.querySelectorAll('table');
-        rows.forEach(row => {
-            row.addEventListener("click", saveRowToLocalStorage);
+        var group = document.querySelectorAll('table');
+        groups.forEach(row => {
+            group.addEventListener("click", saveGroupToLocalStorage);
         });
     
 
-    function saveRowToLocalStorage(event) {
-        var row = event.currentTarget;
+    function saveGroupToLocalStorage(event) {
+        var group = event.currentTarget;
 
-        row.style.background ="white";
+        group.style.background ="white";
 
         var content = row.classList.toString();
         var rowId = generateUniqueId();
