@@ -75,7 +75,7 @@ li {
   margin-left: 200px;
 
 }
-.buttonRow {
+.buttonGroup {
   /* display: flex; */
   display:flex;
   justify-content:space-around;
