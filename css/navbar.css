@@ -108,7 +108,8 @@ hr {
 }
 
 .centerContent {
-  display: flexbox;
+  /* margin-left: 200px; */
+  display: flex;
   justify-content: center;
 }
 
