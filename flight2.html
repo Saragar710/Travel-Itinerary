@@ -55,9 +55,12 @@
     $(document).ready(function() {
         $('#flightInfoModal').modal('show');
         
-
         $('#saveFlightInfo').click(function() {
-      
+            window.location.href = "navbar.html"; 
+        });
+        
+        // Event listener to redirect to home page on click
+        $(document).click(function() {
             window.location.href = "navbar.html"; 
         });
     });
@@ -65,9 +68,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
