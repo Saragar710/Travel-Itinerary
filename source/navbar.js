@@ -103,39 +103,72 @@ document.getElementById("checkItinerary").addEventListener("click", function () 
     // thingsToDoElement.innerHTML += ("<div class = thingsToDoItemized><button type=\"button\" id=\"placesToVisitButton\" class=\"btn btn-info\">Places to visit</button>");
     // thingsToDoElement.innerHTML += ("<button type = \"button\" id = \"checkItinerary\" class=\"btn btn-info\">Show Itinerary</button></div>");
 
-    
+
 
     savedKeys.forEach(function (key) {
       var item = localStorage.getItem(key);
 
       getPlaceDetails(item)
         .then((place) => {
-    
+
           placesToVisitEl = document.getElementById("thingsToDoItemized");
-          placesToVisitEl.innerHTML += ("<div class=placeToVisitItem><h2>"+ place.name + "</h2>");
+          placesToVisitEl.innerHTML += ("<div class=placeToVisitItem><h2>" + place.name + "</h2>");
           placesToVisitEl.innerHTML += ("<b><u>Address:</u></b><br>" + place.formatted_address + "<br><b><u>Rating:<br></u></b>" + place.rating);
-          
+
           if (place.website) {
             placesToVisitEl.innerHTML += ("<br><b><u>Website address:<br></u></b>" + "<a href=\"" + place.website + "\" target=\"_blank\">" + place.website + "</a>");
-        } else {
+          } else {
             place.website = "No website address available";
             placesToVisitEl.innerHTML += ("<br><b><u>Website address:<br></u></b>" + place.website);
-        }
+          }
 
-        placesToVisitEl.innerHTML += ("<br><b><u>Phone number:<br></u></b>" + place.formatted_phone_number + "<br><br></div>");
+          placesToVisitEl.innerHTML += ("<br><b><u>Phone number:<br></u></b>" + place.formatted_phone_number + "<br><br></div>");
 
         })
     });
 
     var visitButton = document.getElementById("placesToVisitButton");
     visitButton.addEventListener("click", function () {
-    window.location.href = "thingsToDo.html";
+      window.location.href = "thingsToDo.html";
     })
+
+  }
+
+  else {
+    placesToVisitEl = document.getElementById("thingsToDoItemized");
+    placesToVisitEl.innerHTML = ("<h5>It looks like you haven't added anything to your itinerary yet. Try Checking places to visit!</p>");
 
   }
 
 
 })
+
+
+clearButton = document.getElementById("clearButton");
+
+clearButton.addEventListener("click", function () {
+  console.log("clearItinerary clicked");
+  const tables = document.querySelectorAll("table tr");
+
+  var savedKeys = JSON.parse(localStorage.getItem('savedKeys'));
+
+  console.log(savedKeys);
+
+  if (savedKeys) {
+    savedKeys.forEach(function (e) {
+      localStorage.removeItem(e);
+    });
+  }
+
+  localStorage.removeItem("savedKeys");
+
+    placesToVisitEl = document.getElementById("thingsToDoItemized");
+    placesToVisitEl.innerHTML = ("<h5>It looks like you haven't added anything to your itinerary yet. Try Checking places to visit!</p>");
+
+
+
+
+});
 
 
 //(END OF ALEJANDRA'S PORTION)

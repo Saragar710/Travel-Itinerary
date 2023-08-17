@@ -90,6 +90,12 @@ hr {
   background-color: white;
 }
 
+.displayButtons {
+  display: flex;
+  justify-content: space-around;
+}
+
+
 /* End of Alejandra's Portion */
 
 .yoIntro {

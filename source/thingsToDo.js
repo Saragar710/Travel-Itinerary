@@ -244,6 +244,7 @@ function addButton() {
 
 
 clearButton = document.getElementById("clearButton");
+
 clearButton.addEventListener("click", function () {
     const tables = document.querySelectorAll("table tr");
     tables.forEach(function (table) {
@@ -266,3 +267,4 @@ clearButton.addEventListener("click", function () {
 
 
 });
+
