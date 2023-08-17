@@ -42,8 +42,14 @@ li {
   margin-bottom: 30px;
   margin-top: 30px;
 }
+
+#startAndEnd {
+  text-align: center;
+  display:flex;
+}
+
 #start {
-  margin-left: 260px;
+  margin-left: 200px;
   text-align: center;
 }
 #end {
@@ -67,6 +73,21 @@ hr {
 
 .alejandraIntro {
   margin-left: 200px;
+  text-align: center;
+}
+
+.thingsToDoItemized {
+  background-color: aliceblue;
+  margin-right: 50px;
+
+}
+
+.placeToVisitItem {
+  background-color: #87CEFA;
+}
+
+.noColor {
+  background-color: white;
 }
 
 /* End of Alejandra's Portion */

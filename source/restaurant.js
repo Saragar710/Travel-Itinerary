@@ -1,35 +1,127 @@
-// var requestUrl =
-// apiKey="AIzaSyBfC6_iJVBClIW-uA3m3qaR3g6w9zxmbvs "
+
+    function initMap() {
+        autocomplete = new google.maps.places.Autocomplete((document.getElementById('autocomplete')),
+        {
+            types:['geocode']
+        });
+        autocomplete.addListener('place_changed', searchNearbyRestaurants);
+	}	
+        // function initializeMap() {
+        //     var initialLocation = { lat:28.381234066504312, lng:-81.61096094887043};
+        //     var map = new google.maps.Map(document.getElementById('map'),{
+        //         center: initialLocation,
+        //         zoom: 10
+        //     });
+        // }
+    
+    // function searchNearbyRestaurants(){
+    //      document.getElementById('type').onchange = searchNearbyRestaurants
+    
+    function searchNearbyRestaurants(){
+		console.log("Selected searchNearbyRestaurants");
+
+        document.getElementById('restaurants').innerHTML = '';
+
+        var restaurant = autocomplete.getPlace();
+        
+
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: restaurant.geometry.location,
+            zoom: 15
+        });
+
+        service = new google.maps.places.PlacesService(map);
+        service.nearbySearch({
+            location: restaurant.geometry.location,
+            radius: '500',
+            type: ['restaurants']
+        }, callback)
+    }
+    function callback(results, status) {
+        if(status === google.maps.places.PlacesServiceStatus.OK) {
+           console.log(results.length)
+           for(var i = 0; i < results.length; i++) {
+               createMarker(results[i]);
+        }
+	}
+	}
+
+    function createMarker(restaurant) {
+        console.log(restaurant);
+        var table = document.getElementById("restaurants");
+        var row = table.insertRow();
+        var cell1 = row.insertCell(0);
+        cell1.innerHTML = restaurant.name;
+        if(restaurant.photos) {
+            var image = document.createElement("img");
+            image.src = restaurant.photos[0].getUrl();
+            let cell2 = row.insertCell(1);
+            image.width = 300;
+            image.height = 200;
+            image.style.borderRadius = 50;
+            cell2.innerHTML = image.outerHTML;
+
+        } else { 
+            const image = document.createElement("img");
+            image.src = "./images/roam_radar_200x300.png";
+            let cell2 = row.insertCell(1);
+            image.width = 300;
+            image.height = 200;
+            image.style.borderRadius = 50; 
+            cell2.innerHTML = image.outerHTML;
+            }
+        }
+
+    function addButton() {
+        var rows = document.querySelectorAll('');
+        rows.forEach(row => {
+            row.addEventListener("click", saveRowToLocalStorage);
+        });
+    
+
+    function saveRowToLocalStorage(event) {
+        var row = event.currentTarget;
+
+        row.style.background ="white";
+
+        var content = row.classList.toString();
+        var rowId = generateUniqueId();
+
+        let isContentSaved = false;
+        for(let i =0; i< localStorage.lenght; i++) {
+            var storedContent = localStorage.getItem(localStorage.key(i));
+            if (content === storedContent) {
+                isContentSaved = true;
+                break;
+            }
+
+        }
+        if (!isContentSaved){
+            localStorage.setItem(rowId, content);
 
 
-var myApi = "AIzaSyDa-NcckTIrTU8Qhz437JcSJoK30OswcGg"
-// AIzaSyDa-NcckTIrTU8Qhz437JcSJoK30OswcGg //google api key
+            var savedKeys = JSON.parse(localStorage.getItem('savedKeys'))  || [];
+            savedKeys.push(rowId);
+            localStorage.setItem('savedKeys', JSON.stringify(savedKeys));
 
+            console.log("Row with ID" + rowId + "saved to local storage.");
+        } else { 
+            console.log("Row with ID" + rowId + "already exists in local storage.");
+        }
+    }
+    
+    function generateUniqueId() {
+        return Math.random().toString(36).substring(2,10);
+    }
+  }
+  clearButton = document.getElementById("clearButton");
+  clearButton.addEventListener("click", function () {
+    console.log(savedKeys);
 
-
-
-
-
-// const url = 'https://worldwide-restaurants.p.rapidapi.com/search';
-// const options = {
-// 	method: 'POST',
-// 	headers: {
-// 		'content-type': 'application/x-www-form-urlencoded',
-// 		'X-RapidAPI-Key': 'b6a9e3060amsha6d19ed1a224e1ep14dbb8jsn15df1069f330',
-// 		'X-RapidAPI-Host': 'worldwide-restaurants.p.rapidapi.com'
-// 	},
-// 	body: new URLSearchParams({
-// 		language: 'en_US',
-// 		limit: '30',
-// 		location_id: '297704',
-// 		currency: 'USD'
-// 	})
-// };
-
-// try {
-// 	const response = await fetch(url, options);
-// 	const result = await response.text();
-// 	console.log(result);
-// } catch (error) {
-// 	console.error(error);
-// }
+    if (savedKeys) {
+        savedKeys.forEach(function (event) {
+            localStorage.removeItem(event);
+        });
+    }
+        localStorage.removeItem("savedKeys");
+  });
