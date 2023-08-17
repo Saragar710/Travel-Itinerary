@@ -1,7 +1,9 @@
 /* (START OF NICOLES PORTION) */
 * {
   font-family: "Inter", sans-serif;
+  
 }
+
 
 li {
   list-style: none;
@@ -9,13 +11,12 @@ li {
   text-align: center;
   margin-left: -40px;
   margin-bottom: 10px;
+  background-color: lightskyblue;
 }
 #logo {
   width: 100%;
   margin-bottom: 5px;
-}
-.nav-link :active {
-  color: rgb(26, 241, 198);
+  background-color: lightskyblue;
 }
 .sidenav a:hover {
   color: white;
@@ -23,6 +24,7 @@ li {
 }
 .sidenav a {
   color: darkblue;
+  background-color: lightskyblue;
 }
 .sidenav {
   height: 100%;
@@ -36,12 +38,16 @@ li {
   top: 0;
   left: 0;
 }
+ul{
+  background-color: lightskyblue;
+}
 
 #locationTitle {
   text-align: center;
   margin-left: 200px;
   margin-bottom: 30px;
   margin-top: 30px;
+  
 }
 
 #startAndEnd {
@@ -59,7 +65,7 @@ li {
 #outputStart,
 #outputEnd,
 #outputTitle {
-  color: #03beb2;
+  color: darkblue;
   font-weight: bolder;
 }
 hr {
