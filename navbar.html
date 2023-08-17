@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="css/navbar.css" />
     <title>Navbar Code </title>
 </head>
-<body>
+<body id="navbody">
 </div>
 <!-- Please do not edit anything from this section (NICOLES PORTION) -->
  <nav class="sidenav">
@@ -35,10 +35,10 @@
               <a class="nav-link" href="itinerary.html">Budget</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="hotels.html">Hotels</a>
+              <a class="nav-link" href="#hotelButton">Hotels</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="flight2.html">Flights</a>
+              <a class="nav-link" href="#flightButton">Flights</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="restaurant.html">Resturants to Visit</a>
@@ -61,12 +61,12 @@
         <div class="col">
           <div id="startAndEnd">
             
-              <h3 id="start">Starting your adventure on <span id="outputStart"> </span></h3> 
+              <h2 id="start">Starting your adventure on <span id="outputStart"> </span></h2> 
               
             
             <div class="col">
               
-           <h3 id="end"> Leaving on <span id="outputEnd"> </span></h3>
+           <h2 id="end"> Leaving on <span id="outputEnd"> </span></h2>
               </div>
           </div>
           
@@ -79,6 +79,10 @@
 
   <!-- If adding JS to your portion of navbar page please do not touch CSS that is above, it will mess up  -->
 <!-- current look (ADD AT THE TOP AND BOTTOM OF YOUR SECTIONS YOUR NAME COMMENTED OUT TO AVOID GITHUB CONFLICTS )  -->
+
+
+
+
 
 
 <!-- Alejandra's section for naviagation page-->
@@ -113,17 +117,21 @@
 <!-- Yo's Section -->
 <section class="yoIntro" id="yo-intro">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6 mx-auto text-center">
       <h1 class="flightTitle">Flights</h1>
       <br>
       <button type="button" id="flightButton" class="btn btn-info">Flights</button>
     </div>
-    <div class="col-md-6">
+  </div>
+  <hr> <!-- Line between the two rows -->
+  <div class="row">
+    <div class="col-md-6 mx-auto text-center">
       <h1 class="hotelTitle">Hotels</h1>
       <br>
       <button type="button" id="hotelButton" class="btn btn-info">Hotels</button>
     </div>
   </div>
+
   <hr>
 </section>
 
@@ -141,10 +149,7 @@
   <div>
   <button type="button" id="restaurantsToVisitButton" class="btn btn-info">Restaurants to Visit</button>
   <button type="button" class="btn btn-info" id="goToItinerary">Go to Itinerary</button>
-  </div>
-
-  <div>
-    <button type="button" class="btn btn-info" id="clearAllButton">Clear All</button>
+   <button type="button" class="btn btn-info" id="clearAllButton">Clear All</button>
   </div>
   </div>
 

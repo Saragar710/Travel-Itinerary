@@ -22,7 +22,7 @@ body {
 
 .jumbotron {
     text-align: center;
-    background-color: rgba(255, 254, 254, 0.25); 
+    background-color: rgba(255, 254, 254, 0.75); 
     color: rgb(15, 15, 15); 
     padding: 120px;
     top: 70%;
@@ -56,7 +56,9 @@ body {
 }
 
 .btn-search{
-    background-color: rgba(77, 183, 253, 0.45); 
+    background-color: rgba(159, 216, 253, 0.45); 
+    width: 175px;
+    height: 25px;
 }
 a.nav-link{
 text-decoration: none;
