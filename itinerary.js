@@ -53,59 +53,41 @@ $(document).ready(function() {
     if (userInputAmount === "") {
       noEnterAmount.show();
     } else {
-      noEnterAmount.hide(); // Hide the amount error message
+      noEnterAmount.hide();
+       // Hide the amount error message
     }
 
     if (selectedExpense !== "" && userInputAmount !== "") {
-  
-const e = localStorage.getItem('expenses') ? JSON.parse(localStorage.getItem('expenses')) : [];
-e.push({selectedExpense, userInputAmount})
-localStorage.setItem('expenses', JSON.stringify(e));
+      localStorage.setItem('selectedExpense', selectedExpense);
+      localStorage.setItem('userInputAmount', userInputAmount);
 
-let totalExpense = 0;
-
-// let totalExpense = $('#expense-total').text();
-// 
-console.log(totalExpense);
-for(let x = 0; x < e.length; x++) {
-  console.log(e[x].selectedExpense, e[x].userInputAmount);
-totalExpense += parseInt(e[x].userInputAmount)
-console.log('total', totalExpense)
-$('#expense-total').text(totalExpense);
-let expenseWrapper = $('<div>');
-let expenseName = $('<div>')
-expenseName.text(e[x].selectedExpense);
-let expenseValue = $('<div>');
-expenseValue.text(e[x].userInputAmount);
-expenseWrapper.append(expenseName).append(expenseValue);
-expenseWrapper.addClass('expense-item');
-$('#add-expense-js').append(expenseWrapper);
-
-
-}
-    localStorage.setItem('selectedExpense', selectedExpense);
-    localStorage.setItem('userInputAmount', userInputAmount);
-    
-    const expenseContainer = $('#add-expense-js');
-    for (let i = 0; i < 1; i++) {
-      const newExpenseDiv = $('<div>' , {
-        class: 'expense-item',
-        text: 'Expense ' + (i + 1) + ': ' + selectedExpense + ' -$' + userInputAmount //css fixed
-      });
-      expenseContainer.append(newExpenseDiv);
-  
-      $('#add-expense-details').modal('hide');
+      const expenseContainer = $('#add-expense-js');
+      for (let i = 0; i < 5; i++) {
+        const newExpenseDiv = $('<div>', {
+          class: 'expense-item',
+          text: 'Expense ' + (i + 1) + ': ' + selectedExpense + ' - $' + userInputAmount
+        });
+        
+        expenseContainer.append(newExpenseDiv);
+        
+      }
+     let totalExpenses = 0;
+    for(let i =0; i < expenses.length; i++) {
+      totalExpenses += parseFloat(expenses[i].amount);
     }
     
-  }
-}); 
- 
-
+    const progressBarWidth = (totalExpenses / totalBudget) * 100;
+    $('#progress-bar').css('width', progressBarWidth + '%');
+    $('#total-expenses').text('$' + totalExpenses.toFixed(2));
+      
+      $('#add-expense-details').modal('hide');
+    }
+   
+    });
+  
+      
   });
-
-
-
-
+  
 
 
 var acc = document.getElementsByClassName("accordion");
