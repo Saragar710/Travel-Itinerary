@@ -10,6 +10,9 @@
     font-style: normal;
     font-weight: 300;
 }
+body{
+    background-color: lightblue;
+}
 header {
 /* font-size: 8px; */
 background-position: 100% -40px;
