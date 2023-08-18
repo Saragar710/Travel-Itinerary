@@ -47,12 +47,13 @@ $(document).ready(function() {
      
       let totalExpenses = 0;
       const expenseContainer = $('#add-expense-js');
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 1; i++) {
         const progressBarWidth = (totalExpenses + parseFloat(userInputAmount));
         $('#progress-bar').css('width', progressBarWidth + '%');
         $('#total-expenses').text('$' + progressBarWidth.toFixed(2));
+        localStorage.setItem('totalExpenses', progressBarWidth)
           
-        const newExpenseDiv = $('<div>', {
+        const newExpenseDiv = $('<h6>', {
           class: 'expense-item',
           text: 'Expense ' + (i + 1) + ': ' + selectedExpense + ' - $' + userInputAmount
           
@@ -65,21 +66,7 @@ $(document).ready(function() {
   });
 });
     
-      
-  
-      
-  
-      
-    
-    
-   
-     
-    
-    
-  
-
-
-var acc = document.getElementsByClassName("accordion");
+  var acc = document.getElementsByClassName("accordion");
 var i;
 for (i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function() {
