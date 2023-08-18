@@ -42,9 +42,8 @@ The user will be asked where they would like their visit to take place and from 
 One the left you see a vertical navigation bar with diffrent topics that the user can view to help in their travel plans. Should they want to exit the application they are also provided a log out link as well which will direct them to the log in page described earlier
 ![navbar](/images/navigation-bar-screenshot.jpg)
 
-On the right of the same page we will be able to view at the top the name and a picture of the location they decided to visit along with the dates chosen. They are presented with a pop up button to help them input their flight information as well as a budget section.
-By clicking on the navigation bar topics you are able to view each one indivisually.
-![Itinerary](/images/)
+On the right of the same page we will be able to view at the top the name of the location they decided to visit along with the dates chosen. Along with diffrent links to the sections in the application
+![Itinerary](/images/itinerary.jpg)
 
 ## Acknowledgments
 <ul>

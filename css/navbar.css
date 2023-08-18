@@ -108,11 +108,25 @@ background-color: #87CEFA;
   margin-left: 200px;
   margin-top: 20px;
 }
+.budgetTitle{
+  background-color: #87CEFA;
+  width: 165%; 
+  border-radius: 10px;
+  padding: 5px;
+  margin-left: -130px;
+}
+#budgetButton{
+  margin-left: 150px;
+  margin-bottom: 20px;
+}
 #flightButton, #hotelButton{
   margin-left: 150px;
+  margin-bottom: 20px;
 }
 #goToRestaurants{
   margin-left: 450px;
+  margin-bottom: 20px;
+  color: white;
 }
 
 /* (END OF NICOLES PORTION) */

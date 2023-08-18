@@ -62,7 +62,7 @@
                 <br>
                 <br>
                  <h6>Amount:</h6> 
-                <input type="text" class="form-control" id="budget-dollar-amount"
+                <input type="number" class="form-control" id="budget-dollar-amount"
                 aria-label="Amount-t-dollar" placeholder="$" required>
                 <label id="expense-amount-result" class="alert-option alert-amount">Invalid.Enter Expense amount.</label>
 
@@ -87,7 +87,7 @@
 
         <div class="budget-main-wrapper">
             <div class="budget-amount">
-                <h2>$0.00</h2>
+                <h2 class="expense-total">$<span id="expense-total">0.00</span></h2>
                 <p id="budget-track" class="budgets-amount">Budget:$</p>
             </div>
 
