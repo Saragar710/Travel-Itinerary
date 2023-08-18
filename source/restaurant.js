@@ -135,5 +135,5 @@
        
   });
   localStorage.removeItem("inputKeys");
-//   localStorage.setItem('inputKeys',JSON.stringify([]));
+  localStorage.setItem('inputKeys',JSON.stringify([]));
 });
