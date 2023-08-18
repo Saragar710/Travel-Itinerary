@@ -45,12 +45,17 @@ $(document).ready(function() {
       localStorage.setItem('selectedExpense', selectedExpense);
       localStorage.setItem('userInputAmount', userInputAmount);
      
-
+      let totalExpenses = 0;
       const expenseContainer = $('#add-expense-js');
-      for (let i = 1; i < 5; i++) {
+      for (let i = 0; i < 5; i++) {
+        const progressBarWidth = (totalExpenses + parseFloat(userInputAmount));
+        $('#progress-bar').css('width', progressBarWidth + '%');
+        $('#total-expenses').text('$' + progressBarWidth.toFixed(2));
+          
         const newExpenseDiv = $('<div>', {
           class: 'expense-item',
           text: 'Expense ' + (i + 1) + ': ' + selectedExpense + ' - $' + userInputAmount
+          
         });
         
         expenseContainer.append(newExpenseDiv);
@@ -60,17 +65,14 @@ $(document).ready(function() {
   });
 });
     
-      let totalExpenses = 0;
-    for(let i = 0; i < expenses.length; i++) {
       
   
-      totalExpenses += parseFloat(expenses[i].amount);
-    }
-    
-    const progressBarWidth = (totalExpenses / totalBudget) * 100;
-    $('#progress-bar').css('width', progressBarWidth + '%');
-    $('#total-expenses').text('$' + totalExpenses.toFixed(2));
       
+  
+      
+    
+    
+   
      
     
     
