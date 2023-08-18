@@ -74,7 +74,7 @@ for (i = 0; i < acc.length; i++) {
     this.classList.toggle("active");
 
     
-    var panel = this.nextElementSibling; //next sibling is the p-tag, which will hold the expense list
+    var panel = this.nextElementSibling; 
     if (panel.style.display === "block") {
       panel.style.display = "none";
     } else {
