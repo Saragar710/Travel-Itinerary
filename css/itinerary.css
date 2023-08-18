@@ -1,6 +1,6 @@
 * {
-    font-family:'Inter', sans-serif;
-    
+    font-family: 'Inter', sans-serif;
+
 }
 
 .budget-header h1 {
@@ -10,114 +10,135 @@
 .expense-list h4 {
     font-weight: bold;
 }
-.progress-bar {
-    width:20%; 
-}
-.progress {
-    width:50%;
-    margin-bottom:10px;
-    margin-left:5px;
+
+.alert-option {
+    color:red;
+    font-weight:bold;
     
+
+}
+
+.alert-amount {
+display:none;
+}
+
+
+.alert-select {
+display:none;
+}
+.progress-bar {
+    width: 20%;
+}
+
+.progress {
+    width: 50%;
+    margin-bottom: 10px;
+    margin-left: 5px;
+
 
 }
 
 
 .budget-wrapper {
-    width:800px;
-    
-    
-   
-    
+    width: 800px;
+
+
+
+
 }
+
 .budget-header {
-    display:flex;
+    display: flex;
     justify-content: space-between;
 
 }
 
 .budget-amount {
-    
+
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    padding-left: 5px;
+
+
+
+}
+
+
+
+.expense-headers {
+    position:relative;
     display:flex;
     justify-content: space-between;
-    width:40%;
-    padding-left:5px;
-   
+     padding-top:5px;
     
-
 }
 
-.link-box {
-
-}
-
-.invite-link-text {
-
-}
-
-.invite-text {
-
+.notes {
+    float:left;
+    position:relative;
+    right:60px;
 }
 
 .copy-link {
     background-color: #f75940;
-    border-color:#f75940;
+    border-color: #f75940;
     border-radius: 20px;
 }
 
 
 .budgetSaveButton {
     background-color: #f75940;
-    border-color:#f75940;
+    border-color: #f75940;
     border-radius: 20px;
 }
 
 .side-bar-budget {
-    display:flex;
+    display: flex;
     flex-direction: column;
-    margin-top:5px;
-    padding-right:5px;
+    margin-top: 5px;
+    padding-right: 5px;
 }
 
-.add-expense{
-    margin-bottom:5px;
+.add-expense {
+    margin-bottom: 5px;
 }
 
 .expense-buttons {
-    display:flex;
-    padding-left:5px;
+    display: flex;
+    padding-left: 5px;
 
-    
-    
+
+
 }
 
-.button{
+.button {
     border-radius: 20px;
-   
+
 
 }
 
 
 .trip-name {
-    padding-bottom:30px;
-    padding-left:5px;
+    padding-bottom: 30px;
+    padding-left: 5px;
 }
 
 .wrapper {
-    width:50%;
+    width: 50%;
 }
 
 .edit-budget {
-    margin-right:10px
-    
+    margin-right: 10px
 }
 
 .expense-list {
-    display:flex;
+    display: flex;
     justify-content: space-between;
-    padding-left:5px;
-    padding-right:5px;
-    padding-top:20px;
-    
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 20px;
+
 }
 
 .accordion {
@@ -130,34 +151,30 @@
     border: none;
     outline: none;
     transition: 0.4s;
-  }
+}
 
-  .accordion:after {
-    content: '\02795'; 
+.accordion:after {
+    content: '\02795';
     font-size: 13px;
     color: #777;
     float: right;
     margin-left: 5px;
-  }
-  
-  .active:after {
-    content: "\2796"; 
-  }
+}
 
-  .active, .accordion:hover {
+.active:after {
+    content: "\2796";
+}
+
+.active,
+.accordion:hover {
     background-color: #ccc;
-  }
-  
-  
-  .panel {
-    padding: 0 18px;
+}
+
+
+.panel {
+    padding: 0 5px;
     background-color: white;
     display: none;
     overflow: hidden;
-    
-  }
 
-
-  
-
-  
+}
