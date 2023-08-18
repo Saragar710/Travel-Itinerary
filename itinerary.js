@@ -15,22 +15,8 @@ $(document).ready(function() {
   $('#edit-budget-modal').modal('hide');
   console.log(newBudgetAmount)
   });
-});
-/*
-  const storedInputValue = localStorage.getItem('budgetAmount');
-    if (storedInputValue) {
-        // Do something with the stored input value
-        $('#budget-track').text('Budget: ' + '$' + storedInputValue);
-    }
-  });
-});
-        let budgetDisplay = $('#budget-track').val();
-        localStorage.setItem('budgetShown', budgetDisplay);
-        
-    
 
-
-   $('#save-expense-details').on('click', function(event){
+  $('#save-expense-details').on('click', function(event){
     event.preventDefault();
     let selectedExpense = $('#expense-list-name').val();
     let noSelection = $('#select-result');
@@ -38,43 +24,48 @@ $(document).ready(function() {
     let noEnterAmount = $('#expense-amount-result');
     
 
-    console.log(selectedExpense);
+    console.log(selectedExpense); 
     console.log(userInputAmount);
    
     if (selectedExpense === "") {
       noSelection.show();
     } else {
-      noSelection.hide(); // Hide the selection error message
+      noSelection.hide(); 
     }
 
     if (userInputAmount === "") {
       noEnterAmount.show();
     } else {
+      noSelection.hide();
       noEnterAmount.hide();
-       // Hide the amount error message
+      
     }
 
     if (selectedExpense !== "" && userInputAmount !== "") {
       localStorage.setItem('selectedExpense', selectedExpense);
       localStorage.setItem('userInputAmount', userInputAmount);
-      $('#save-expense-details').modal('hide');
+     
 
       const expenseContainer = $('#add-expense-js');
-      for (let i = 0; i < 5; i++) {
+      for (let i = 1; i < 5; i++) {
         const newExpenseDiv = $('<div>', {
           class: 'expense-item',
           text: 'Expense ' + (i + 1) + ': ' + selectedExpense + ' - $' + userInputAmount
         });
         
         expenseContainer.append(newExpenseDiv);
-      
+      }
+       $('#add-expense-details').modal('hide');
+    }
+  });
+});
     
       let totalExpenses = 0;
-    for(let i =0; i < expenses.length; i++) {
+    for(let i = 0; i < expenses.length; i++) {
       
   
       totalExpenses += parseFloat(expenses[i].amount);
-    
+    }
     
     const progressBarWidth = (totalExpenses / totalBudget) * 100;
     $('#progress-bar').css('width', progressBarWidth + '%');
@@ -101,7 +92,8 @@ for (i = 0; i < acc.length; i++) {
     } else {
       panel.style.display = "block";
     }
-  
+  });
+}
 
 function copyText() {
       
@@ -109,4 +101,4 @@ function copyText() {
   //copy invite link 
   navigator.clipboard.writeText
       ("https://github.com/Saragar710/Travel-Itinerary");
-*/
+};
