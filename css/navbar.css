@@ -3,12 +3,7 @@
   font-family: "Inter", sans-serif;
   
 }
-h1{
-  background-color: #87CEFA;
-  width: 80%; 
-  border-radius: 10px;
-  padding: 5px;
-}
+
 li {
   list-style: none;
   font-weight: bolder;
@@ -51,6 +46,10 @@ ul{
   margin-left: 200px;
   margin-bottom: 30px;
   margin-top: 30px;
+  background-color: #87CEFA;
+  width: 80%; 
+  border-radius: 10px;
+  padding: 5px;
   
 }
 
@@ -77,6 +76,45 @@ hr {
   margin-left: 270px;
   line-height: 10px;
 }
+.placesToVisitTitle{
+  background-color: #87CEFA;
+  width: 95%; 
+  border-radius: 10px;
+  padding: 5px;
+
+}
+.flightTitle
+{
+background-color: #87CEFA;
+  width: 165%; 
+  border-radius: 10px;
+  padding: 5px;
+  margin-left: 100px;
+  margin-left: -130px;
+}
+.hotelTitle{
+  background-color: #87CEFA;
+  width: 165%; 
+  border-radius: 10px;
+  padding: 5px;
+  margin-left: -130px;
+}
+.restaruantTitle{
+  background-color: #87CEFA;
+  width: 80%; 
+  border-radius: 10px;
+  padding: 5px;
+  text-align: center;
+  margin-left: 200px;
+  margin-top: 20px;
+}
+#flightButton, #hotelButton{
+  margin-left: 150px;
+}
+#goToRestaurants{
+  margin-left: 450px;
+}
+
 /* (END OF NICOLES PORTION) */
 /* If adding CSS to your portion of navbar please do not touch CSS that is above, it will mess up current look  */
 
@@ -102,8 +140,15 @@ hr {
 }
 
 .displayButtons {
+
+  /* max-width: 1000px; */
+  
+}
+
+.centerContent {
+  /* margin-left: 200px; */
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 
@@ -113,3 +158,4 @@ hr {
  
   text-align: center;
 }
+
