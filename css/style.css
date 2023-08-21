@@ -10,10 +10,6 @@
     font-weight: 300;
 }
 
-body{
-    /* background-color:rgb(175, 240, 194); */
-}
-
 header {
 /* font-size: 8px; */
 
@@ -47,12 +43,12 @@ margin-top: 20%;
     justify-content: flex-end;
 
     margin-right: 0px;
-    
 
 }
 
 .logo{
-    width:auto; height:200px
+    width:auto; 
+    height:200px;
 }
 
 .slogan {
@@ -78,14 +74,3 @@ margin-top: 20%;
     /* box-shadow: 10px 10px; */
     
 }
-
-/* @media screen and (max-width: 1280px){
-    body{
-        background-color: lightblue;
-    }
-}
-@media screen and (min-width: 280px){
-    body {
-        background-color: honeydew
-    }
-} */
