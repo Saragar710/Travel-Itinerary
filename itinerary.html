@@ -1,18 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Budget Your Next Trip</title>
+    <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="./css/itinerary.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
+    
 </head>
 
 <body>
+    <nav class="sidenav">
+        <ul>
+          <li><img src="images/ROAMRADAR Logo PNG.png" id="logo"/></li>
+          <li>
+          <a class="nav-link active" aria-current="page" href="navbar.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#budgetButton">Budget</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#hotelButton">Hotels</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#flightButton">Flights</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="restaurant.html">Resturants to Visit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="thingsToDo.html">Places to visit</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="loginPage.html">Log Out </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+<section class="wrapper">
     <section class="budget-wrapper">
         <div class="budget-container">
             <div class="budget-header">
@@ -27,7 +55,7 @@
         </div>
 
   
-  <!-- Modal expense details-->
+  
   <div class="modal fade" id="add-expense-details" tabindex="-1" aria-labelledby="addExpenseLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
       <div class="modal-content">
@@ -53,7 +81,7 @@
             <label id="select-result" class="alert-option alert-select">Invalid.Select option</label>
             <br>
             <br>
-            <div class="amout-description">
+            <div class="amount-description">
                 <p><label for="budget-comments">Budget comments:</label></p>
                 <p><label class="optional-comment" for="budget-comments">(optional)</label></p>
                 <textarea id="budget-comments" name="amout-description" rows="4" cols="50"></textarea>
@@ -76,7 +104,7 @@
     </div>
   </div>
           
-          <!-- Modal -->
+          
           
 
         <div class="trip-name">
@@ -87,12 +115,12 @@
 
         <div class="budget-main-wrapper">
             <div class="budget-amount">
-                <h2 class="expense-total">$<span id="expense-total">0.00</span></h2>
+                <h2 id="total-expenses" class="expense-total">$0.00 <span></span></h2>
                 <p id="budget-track" class="budgets-amount">Budget:$</p>
             </div>
 
             <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
                 </div>
             </div>
 
@@ -104,7 +132,7 @@
             </div>
 
 
-            <!-- Modal add trip mate-->
+            
             <div class="modal fade" id="addTripmate" tabindex="-1" aria-labelledby="tripmateLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
@@ -142,7 +170,7 @@
                 </div>
             </div>
 
-            <!--Add budget amount modal-->
+            
 
 
             <div class="modal fade" id="edit-budget-modal" tabindex="-1" aria-labelledby="editBudgetLabel"
@@ -176,7 +204,7 @@
 
         </div>
 
-            <!--Area of expense lists with amount-->
+           
         <div class="expense-list">
             <div class="expense-detail-position">
                 <button id="expense-summary-list" class="accordion expense-wdth">Expenses</button>
@@ -203,17 +231,21 @@
         </div>
 
 
-        
+    </div>
 
     
-    
+    </section>
     
     </section>
+    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/56f757dad7.js" crossorigin="anonymous"></script>
     <script src="./itinerary.js"></script>
+
+    <script defer src = "source/auth.js"></script>
+    <script defer src = "source/init.js"></script>
     
 </body>
 

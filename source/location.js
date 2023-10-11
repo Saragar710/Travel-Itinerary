@@ -38,6 +38,7 @@ startTripBtn.addEventListener("click", function () {
   localStorage.setItem("chosen Location", JSON.stringify(preferredDestination));
  
 });
+
 var storedData = JSON.parse(localStorage.getItem("Chosen Location")) || [];
 
 
