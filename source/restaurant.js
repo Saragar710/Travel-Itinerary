@@ -75,11 +75,11 @@
     
     
     function addButton() {
-        var groupId = document.querySelectorAll('table');
+        var groupID = document.querySelectorAll('table');
         groupID.forEach(row => {
             groupID.addEventListener("click", saveGroupToLocalStorage);
         });
-    
+    }
 
     function saveGroupToLocalStorage(event) {
         var group = event.currentTarget;
@@ -115,7 +115,7 @@
     function generateUniqId() {
         return Math.random().toString(36).substring(2,10);
     }
-  }
+  
 
   clearAllButton = document.getElementById("clearAllButton");
   clearAllButton.addEventListener("click", function () {
