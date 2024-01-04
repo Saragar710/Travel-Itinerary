@@ -1,3 +1,54 @@
-body{
-    font-family:'Times New Roman', Times, serif
+
+* {
+    box-sizing:border-box;
+    padding: 0;
+    margin: 0;
+    font-size: 25px;
+    /* box-sizing: border-box; */
+    font-size: 25px;
+    text-align: center;
+    font-family: 'Inter',sans-serif;
+    font-style: normal;
+    font-weight: 300;
 }
+body{
+    background-color: lightblue;
+}
+header {
+/* font-size: 8px; */
+background-position: 100% -40px;
+float: right;
+margin-right: auto;
+margin-top: 20%;
+}
+.bg {
+    /* background-image: url("/images/Boardwalk\ over\ ocean.jpg"); */
+    background-image: url(../images/Boardwalk\ over\ ocean.jpg);
+
+    height: 100%;
+    position: fixed;
+    background-position: center;
+    background-size: cover;
+    max-width: fit-content;
+}
+.container { 
+    padding-top: 200px;
+    padding-bottom: 0;
+}
+.container #logo{
+margin-left: 1100px;
+width: 14%;
+margin-top: -450px;
+
+}
+
+/* @media screen and (max-width: 1280px){
+    body{
+        background-color: lightblue;
+    }
+}
+@media screen and (min-width: 280px){
+    body {
+        background-color: honeydew
+    }
+} */
